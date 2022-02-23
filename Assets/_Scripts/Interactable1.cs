@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable1 : MonoBehaviour
 {
-    public PlayerManager pm;
+    public CameraPositioner cameraManager;
     public Transform camPos;
     public bool active;
     private void OnMouseEnter()
@@ -14,21 +14,21 @@ public class Interactable1 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && pm.cameraPositioner.done)
+        if (Input.GetMouseButtonDown(1) && cameraManager.done)
         {
-            pm.cameraPositioner.atObject = false;
-            pm.cameraPositioner.done = false;
-            StartCoroutine(pm.cameraPositioner.MoveCamTo());
+            cameraManager.atObject = false;
+            cameraManager.done = false;
+            StartCoroutine(cameraManager.MoveCamToObject(cameraManager.currentWaypoint.waypointTransform));
         }
     }
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0) && pm.cameraPositioner.done && !active)
+        if (Input.GetMouseButtonDown(0) && cameraManager.done && !active)
         {
-            pm.cameraPositioner.atObject = true;
-            pm.cameraPositioner.done = false;
-            StartCoroutine(pm.cameraPositioner.MoveCamToObject(camPos));
+            cameraManager.atObject = true;
+            cameraManager.done = false;
+            StartCoroutine(cameraManager.MoveCamToObject(camPos));
         }
     }
 
