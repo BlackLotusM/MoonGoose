@@ -160,8 +160,9 @@ public class CameraPositioner : MonoBehaviour
             yield return null;
         }
         done = true;
-        currentIndex = waypointPath.FirstOrDefault(x => x.waypointTransform == camPos).index;
-        currentWaypoint = getWaypointDate(currentIndex);
+        if(waypointPath.FirstOrDefault(x => x.waypointTransform == camPos) != null)
+            currentIndex = waypointPath.FirstOrDefault(x => x.waypointTransform == camPos).index;
+            currentWaypoint = getWaypointDate(currentIndex);
         running = null;
         setUIArrow();
     }
