@@ -6,7 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class DuplicateChecker : MonoBehaviour
 {
-    public CameraPositioner cam;
+    public CameraManager cam;
     // Start is called before the first frame update
 
 
