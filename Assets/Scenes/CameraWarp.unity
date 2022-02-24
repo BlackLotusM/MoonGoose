@@ -967,7 +967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121, y: 225}
+  m_AnchoredPosition: {x: 82, y: 3}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589033888
@@ -1016,7 +1016,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: targetIndex
+        m_MethodName: moveToIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1599,7 +1599,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: test
+        m_MethodName: moveDir
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1731,7 +1731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560, y: -124}
+  m_AnchoredPosition: {x: 509, y: -243}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &861825507
@@ -1780,7 +1780,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: targetIndex
+        m_MethodName: moveToIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1942,7 +1942,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: test
+        m_MethodName: moveDir
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3351,7 +3351,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: test
+        m_MethodName: moveDir
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3515,7 +3515,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: test
+        m_MethodName: moveDir
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3966,7 +3966,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: targetIndex
+        m_MethodName: moveToIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4486,7 +4486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 291, y: 225}
+  m_AnchoredPosition: {x: 291, y: 415}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061425002
@@ -4535,7 +4535,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598795497}
         m_TargetAssemblyTypeName: CameraPositioner, Assembly-CSharp
-        m_MethodName: targetIndex
+        m_MethodName: moveToIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

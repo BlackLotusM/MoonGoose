@@ -78,7 +78,7 @@ public class CameraPositioner : MonoBehaviour
         down = 3
     }
 
-    public void test(int number)
+    public void moveDir(int number)
     {
         direction dir = (direction) number;
 
@@ -122,6 +122,16 @@ public class CameraPositioner : MonoBehaviour
                 }
         }
         return;
+    }
+
+    public void moveToIndex(int number)
+    {
+        currentWaypoint = getWaypointDate(number);
+        if (running != null || !currentWaypoint.waypointTransform)
+            return;
+        mainCam.transform.position = currentWaypoint.waypointTransform.transform.position;
+        mainCam.transform.rotation = currentWaypoint.waypointTransform.transform.rotation;
+        setUIArrow();
     }
 
     public IEnumerator MoveCamToObject(Transform camPos)
