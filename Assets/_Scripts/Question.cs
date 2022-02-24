@@ -20,6 +20,7 @@ public class Question
     public string question;
     public bool multipleChoice = true;
     public List<Answers> answers;
+    public GameObject target;
 
     public void CheckAnswer()
     {

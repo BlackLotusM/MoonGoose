@@ -90,7 +90,6 @@ public class CameraManager : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.left)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.left);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -99,7 +98,6 @@ public class CameraManager : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.right)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.right);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -108,7 +106,6 @@ public class CameraManager : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.up)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.up);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -117,7 +114,6 @@ public class CameraManager : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.down)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.down);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -137,6 +133,7 @@ public class CameraManager : MonoBehaviour
 
     public IEnumerator MoveCamToObject(Transform camPos, bool isQuestion = false, bool exitState = false)
     {
+        done = false;
         if (exitState && isQuestion)
             questionManager.exitQuestion();
         time = 0.6f;

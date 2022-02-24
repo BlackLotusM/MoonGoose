@@ -25,6 +25,7 @@ public class QuestionGiver : MonoBehaviour
 
     private void Start()
     {
+        question.target = this.gameObject;
         questionManager = FindObjectOfType<QuestionManager>();
         cameraManager = FindObjectOfType<CameraManager>();
     }
@@ -47,15 +48,5 @@ public class QuestionGiver : MonoBehaviour
             cameraManager.done = false;
             StartCoroutine(cameraManager.MoveCamToObject(camPos, true, false));
         }
-    }
-    
-    public void sendQuestion()
-    {
-        questionManager.openQuestion();
-    }
-
-    public void sendExit()
-    {
-        questionManager.exitQuestion();
     }
 }

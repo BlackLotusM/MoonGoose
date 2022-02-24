@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class QuestionManager : MonoBehaviour
 
     private List<GameObject> spawned = new List<GameObject>();
     public Question currentQuestion;
+    public CameraManager cameraManager;
+
     public void openQuestion()
     {
         questioCanvas.SetActive(true);
@@ -21,6 +24,8 @@ public class QuestionManager : MonoBehaviour
             GameObject btn = Instantiate(btnPrefab);
             btn.transform.SetParent(btnTarget, false);
             spawned.Add(btn);
+            int temp = spawned.Count - 1;
+            spawned[temp].GetComponent<Button>().onClick.AddListener(() => this.answerMultipleChoice(temp));
         }
 
         while(spawned.Count > currentQuestion.answers.Count)
@@ -39,8 +44,23 @@ public class QuestionManager : MonoBehaviour
         txt_question.text = currentQuestion.question;
     }
 
+    public void answerMultipleChoice(int answer)
+    {
+        for (int i = 0; i < currentQuestion.answers.Count; i++)
+        {
+            currentQuestion.answers[i].selected = false;
+        }
+        currentQuestion.answers[answer].selected = true;
+        currentQuestion.target.GetComponent<MeshRenderer>().material.color = Color.green;
+    }
+
     public void exitQuestion()
     {
+        if (cameraManager.done)
+        {
+            StartCoroutine(cameraManager.MoveCamToObject(cameraManager.currentWaypoint.waypointTransform, true, true));
+        }
+        cameraManager.atObject = false;
         questioCanvas.SetActive(false);
     }
 }
