@@ -1,51 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
-
-[System.Serializable]
-public class cameraWarp
-{
-    public string name;
-    [SerializeField]
-    public int startIndex = 0;
-    [SerializeField]
-    private int cameraDimension;
-    [SerializeField]
-    public cameraIndex[] cameraPosition;
-}
-
-[System.Serializable]
-public class cameraIndex
-{
-    [SerializeField]
-    private string name;
-    [SerializeField]
-    public int index;
-    [SerializeField]
-    public Transform cameraPos;
-}
 
 public class CameraPositioner : MonoBehaviour
 {
     public int currentIndex;
-    public int currentDimension;
-    public cameraWarp[] cameraData;
+    public Waypoint[] waypointPath;
     [SerializeField]
     private Camera mainCam;
     private IEnumerator running;
-    private IEnumerator runningDim;
     public float time;
     public bool done = true, atObject;
-
+    public Waypoint currentWaypoint;
     //TEMP MOVE TO BETTER PLACE
     public GameObject canvasMap;
+    public GameObject btn_left, btn_right, btn_up, btn_down;
 
     private void Start()
     {
         mainCam = Camera.main;
-        //currentIndex = 0;
-        mainCam.transform.position = cameraData[currentDimension].cameraPosition[currentIndex].cameraPos.transform.position;
-        mainCam.transform.rotation = cameraData[currentDimension].cameraPosition[currentIndex].cameraPos.transform.rotation;
+
+        //Setup start postion waypoint 1
+        currentWaypoint = getWaypointDate(currentIndex);
+        mainCam.transform.position = currentWaypoint.waypointTransform.position;
+        mainCam.transform.rotation = currentWaypoint.waypointTransform.rotation;
+
+        setUIArrow();
+    }
+
+    public void setUIArrow()
+    {
+        if (currentWaypoint.targets.left)
+            btn_left.SetActive(true);
+        else
+            btn_left.SetActive(false);
+
+        if (currentWaypoint.targets.right)
+            btn_right.SetActive(true);
+        else
+            btn_right.SetActive(false);
+
+
+        if (currentWaypoint.targets.up)
+            btn_up.SetActive(true);
+        else
+            btn_up.SetActive(false);
+
+        if (currentWaypoint.targets.down)
+            btn_down.SetActive(true);
+        else
+            btn_down.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -57,120 +63,75 @@ public class CameraPositioner : MonoBehaviour
         }
         if (atObject)
             return;
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            currentDown();
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            currentUp();
-        }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            DimensionDown();
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            DimensionUp();
-        }
     }
 
-    public void currentUp()
+    public Waypoint getWaypointDate(int index)
     {
-        if (currentIndex + 1 <= cameraData[currentDimension].cameraPosition.Length - 1)
-        {
-            if (running != null)
-                StopCoroutine(running);
-            currentIndex++;
-            done = false;
-            running = MoveCamTo();
-            StartCoroutine(running);
-        }
+        return waypointPath.FirstOrDefault(obj => obj.index == index);
     }
 
-    public void currentDown()
+    public enum direction
     {
-        if (currentIndex - 1 > -1)
-        {
-            if (running != null)
-                StopCoroutine(running);
-            currentIndex--;
-            done = false;
-            running = MoveCamTo();
-            StartCoroutine(running);
-        }
+        left = 0,
+        right = 1,
+        up = 2,
+        down = 3
     }
 
-    public void targetIndex(int target)
+    public void moveDir(int number)
     {
-        canvasMap.SetActive(false);
-        if (target > -1 && target <= cameraData[currentDimension].cameraPosition.Length - 1)
+        direction dir = (direction) number;
+
+        switch (dir)
         {
-            if (running != null)
-                StopCoroutine(running);
-            currentIndex = target;
-            done = false;
-            running = MoveCamTo();
-            StartCoroutine(running);
+            case direction.left:
+                {
+                    if (running != null || !waypointPath[currentIndex].targets.left)
+                        return;
+                    running = MoveCamToObject(waypointPath[currentIndex].targets.left);
+                    done = false;
+                    StartCoroutine(running);
+                    return;
+                }
+            case direction.right:
+                {
+                    if (running != null || !waypointPath[currentIndex].targets.right)
+                        return;
+                    running = MoveCamToObject(waypointPath[currentIndex].targets.right);
+                    done = false;
+                    StartCoroutine(running);
+                    return;
+                }
+            case direction.up:
+                {
+                    if (running != null || !waypointPath[currentIndex].targets.up)
+                        return;
+                    running = MoveCamToObject(waypointPath[currentIndex].targets.up);
+                    done = false;
+                    StartCoroutine(running);
+                    return;
+                }
+            case direction.down:
+                {
+                    if (running != null || !waypointPath[currentIndex].targets.down)
+                        return;
+                    running = MoveCamToObject(waypointPath[currentIndex].targets.down);
+                    done = false;
+                    StartCoroutine(running);
+                    return;
+                }
         }
+        return;
     }
 
-    public void DimensionUp()
+    public void moveToIndex(int number)
     {
-        if (currentDimension + 1 <= cameraData.Length - 1)
-        {
-            if (runningDim != null)
-                StopCoroutine(runningDim);
-            done = false;
-            currentDimension++;
-            runningDim = MoveCamDimension();
-            StartCoroutine(runningDim);
-        }
-    }
-
-    public void DimensionDown()
-    {
-        if (currentDimension - 1 >= 0)
-        {
-            if (runningDim != null)
-                StopCoroutine(runningDim);
-            done = false;
-            currentDimension--;
-            runningDim = MoveCamDimension();
-            StartCoroutine(runningDim);
-        }
-    }
-
-    public IEnumerator MoveCamTo()
-    {
-        
-        Vector3 startingPos = mainCam.transform.position;
-        Vector3 finalPos = cameraData[currentDimension].cameraPosition[currentIndex].cameraPos.transform.position;
-
-        Quaternion startingRotation = mainCam.transform.rotation;
-        Quaternion finalRotation = cameraData[currentDimension].cameraPosition[currentIndex].cameraPos.transform.rotation;
-
-        if (Vector3.Distance(startingPos, finalPos) < 0.1 && Quaternion.Angle(startingRotation, finalRotation) < 0.1)
-        {
-            done = true;
-            yield break;
-        }
-
-        time = 0.89f;
-        float elapsedTime = 0;
-
-        while (elapsedTime < time)
-        {
-            mainCam.transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
-            mainCam.transform.rotation = Quaternion.Lerp(startingRotation, finalRotation, (elapsedTime / time));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        done = true;
+        currentWaypoint = getWaypointDate(number);
+        if (running != null || !currentWaypoint.waypointTransform)
+            return;
+        mainCam.transform.position = currentWaypoint.waypointTransform.transform.position;
+        mainCam.transform.rotation = currentWaypoint.waypointTransform.transform.rotation;
+        setUIArrow();
     }
 
     public IEnumerator MoveCamToObject(Transform camPos)
@@ -199,16 +160,9 @@ public class CameraPositioner : MonoBehaviour
             yield return null;
         }
         done = true;
-    }
-
-    private IEnumerator MoveCamDimension()
-    {
-        mainCam.enabled = false;
-        yield return new WaitForSeconds(2);
-        mainCam.transform.position = cameraData[currentDimension].cameraPosition[cameraData[currentDimension].startIndex].cameraPos.transform.position;
-        mainCam.transform.rotation = cameraData[currentDimension].cameraPosition[cameraData[currentDimension].startIndex].cameraPos.transform.rotation;
-        currentIndex = cameraData[currentDimension].startIndex;
-        mainCam.enabled = true;
-        done = true;
+        currentIndex = waypointPath.FirstOrDefault(x => x.waypointTransform == camPos).index;
+        currentWaypoint = getWaypointDate(currentIndex);
+        running = null;
+        setUIArrow();
     }
 }
