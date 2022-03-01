@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class CameraPositioner : MonoBehaviour
+public class CameraManager : MonoBehaviour
 {
     public int currentIndex;
     public Waypoint[] waypointPath;
@@ -17,6 +17,7 @@ public class CameraPositioner : MonoBehaviour
     //TEMP MOVE TO BETTER PLACE
     public GameObject canvasMap;
     public GameObject btn_left, btn_right, btn_up, btn_down;
+    public QuestionManager questionManager;
 
     private void Start()
     {
@@ -89,7 +90,6 @@ public class CameraPositioner : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.left)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.left);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -98,7 +98,6 @@ public class CameraPositioner : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.right)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.right);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -107,7 +106,6 @@ public class CameraPositioner : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.up)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.up);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -116,7 +114,6 @@ public class CameraPositioner : MonoBehaviour
                     if (running != null || !waypointPath[currentIndex].targets.down)
                         return;
                     running = MoveCamToObject(waypointPath[currentIndex].targets.down);
-                    done = false;
                     StartCoroutine(running);
                     return;
                 }
@@ -134,8 +131,11 @@ public class CameraPositioner : MonoBehaviour
         setUIArrow();
     }
 
-    public IEnumerator MoveCamToObject(Transform camPos)
+    public IEnumerator MoveCamToObject(Transform camPos, bool isQuestion = false, bool exitState = false)
     {
+        done = false;
+        if (exitState && isQuestion)
+            questionManager.exitQuestion();
         time = 0.6f;
         Vector3 startingPos = mainCam.transform.position;
         Vector3 finalPos = camPos.position;
@@ -163,6 +163,8 @@ public class CameraPositioner : MonoBehaviour
         if(waypointPath.FirstOrDefault(x => x.waypointTransform == camPos) != null)
             currentIndex = waypointPath.FirstOrDefault(x => x.waypointTransform == camPos).index;
             currentWaypoint = getWaypointDate(currentIndex);
+        if(!exitState && isQuestion)
+            questionManager.openQuestion();
         running = null;
         setUIArrow();
     }
