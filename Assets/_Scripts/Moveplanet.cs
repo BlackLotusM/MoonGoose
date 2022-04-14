@@ -1,13 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Moveplanet : MonoBehaviour
 {
+    [Header("PlanetInfo")]
+    public string naam;
+    public float zwaartekracht = 0;
+    public float correcteAntwoord;
     [SerializeField]
     private Transform targetActive;
     [SerializeField]
     private Transform targetInactive;
+
+    [Header("PlanetTextMap")]
+    public GameObject mapInfoCanvas;
+    public TextMeshProUGUI txtNaamMap;
+    public TextMeshProUGUI txtZwaarteKrachtMap;
+
+    [Header("PlanetMapDone")]
+    public GameObject mapInfoCanvasDone;
+    public TextMeshProUGUI txtNaamMapDone;
+    public TextMeshProUGUI txtZwaarteKrachtMapDone;
+    public TextMeshProUGUI txtAnswerMapDone;
+
+    [Header("PlanetTextQuestion")]
+    public TextMeshProUGUI txtNaam;
+    public TextMeshProUGUI txtZwaarteKracht;
+    public bool isAnswer;
+
+    [Header("QuestioCanvas")]
+    public GameObject questionCanvas;
+    public bool questionDone;
 
     public bool planetActive = false;
 
@@ -15,41 +41,91 @@ public class Moveplanet : MonoBehaviour
     private Vector3 startScale;
     private Vector3 initialScale;
 
-    private IEnumerator co1;
+    public Transform targetCam;
+    public Transform parent;
 
+    private IEnumerator co1;
+    public GameObject hover1;
+    public GameObject hover2;
     private float timeElapsed;
     [SerializeField]
     private float lerpDuration = 3;
 
-    public Transform parent;
+    private CameraManager camMan;
 
-    public GameObject temp;
-    public BoxCollider extraCollider;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            camMan.moveToIndex(camMan.currentIndex);
+            QuestionCanvasState(false);
+        }
+    }
+
     private void OnMouseEnter()
     {
-        transform.localScale += new Vector3(0.04F, 0.04F, 0.04F);
-        //temp.SetActive(true);
-        LeanTween.scaleY(temp, 1, 0.3f);
-        extraCollider.enabled = true;
+        hover1.SetActive(true);
+        hover2.SetActive(true);
+        transform.localScale += new Vector3(0.01F, 0.01F, 0.01F);
     }
     private void OnMouseExit()
     {
-        transform.localScale -= new Vector3(0.04F, 0.04F, 0.04F);
-        //LeanTween.scale(gameObject, new Vector3(1.0f, 1.0f), 1.0f).setEase(LeanTweenType.punch);
-        //temp.Tween("MoveCircle");
-        LeanTween.scaleY(temp, 0, 0.3f);
-        extraCollider.enabled = false;
+        hover1.SetActive(false);
+        hover2.SetActive(false);
+        transform.localScale -= new Vector3(0.01F, 0.01F, 0.01F);
     }
 
     private void OnMouseDown()
     {
-        
+        QuestionCanvasState(true);
+        Camera.main.transform.position = targetCam.position;
     }
-
     public void Start()
     {
+        camMan = FindObjectOfType<CameraManager>();
+        mapInfoCanvasDone.SetActive(false);
+
+        txtNaamMap.text = naam;
+        txtNaam.text = naam;
+        txtZwaarteKracht.text = zwaartekracht + "m/s2";
+        txtZwaarteKrachtMap.text = zwaartekracht + "m/s2";
+        correcteAntwoord = 2.5f * zwaartekracht * 7;
         initialScale = transform.localScale;
         transform.localScale = new Vector3(0, 0, 0);
+        QuestionCanvasState(false);
+    }
+
+    public void Done(string answer)
+    {
+        txtNaamMapDone.text = naam;
+        txtZwaarteKrachtMapDone.text = zwaartekracht.ToString();
+        txtAnswerMapDone.text = answer;
+        questionDone = true;
+
+        string temp = answer.Remove(0, 14);
+        temp = temp.Remove(temp.Length - 1, 1);
+        if (float.Parse(temp) == correcteAntwoord)
+        {
+            Debug.Log("Antwoord is correct");
+        }
+        else
+        {
+            Debug.Log("Antwoord opgeslagen maar incorrect");
+        }
+    }
+    public void QuestionCanvasState(bool state)
+    {
+        questionCanvas.SetActive(state);
+        if (questionDone)
+        {
+            mapInfoCanvas.SetActive(false);
+            mapInfoCanvasDone.SetActive(!state);
+        }
+        else
+        {
+            mapInfoCanvas.SetActive(!state);
+        }
+        
     }
 
     /// <summary>
@@ -64,7 +140,6 @@ public class Moveplanet : MonoBehaviour
         {
             //Calculates time based on duration
             float time = timeElapsed / (lerpDuration - duration);
-
             parent.position = Vector3.Lerp(startPosition, target.position, time);
             transform.localScale = Vector3.Lerp(startScale, targetScale, time);
 
@@ -78,8 +153,8 @@ public class Moveplanet : MonoBehaviour
     public void updateState()
     {
         //Set start settings for ieunumerator
-        startPosition = parent.position;
         startScale = transform.localScale;
+        startPosition = parent.position;
 
         //toggle state
         planetActive = !planetActive;
