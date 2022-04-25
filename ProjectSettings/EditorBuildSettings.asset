@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Scene.unity
-    guid: 6ebf71a61826bf24eb5c6341aa66f722
+    path: Assets/Scenes/Main Menu.unity
+    guid: e13b4be5e1695d64193c76c3113aba76
   - enabled: 1
     path: Assets/Scenes/CameraWarp.unity
     guid: 539ee13697dec274bb50596727ad3a4b
