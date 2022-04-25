@@ -6,15 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu-Rowin.unity
-    guid: 3308b65b26434dc43864ebd741e06eff
-  - enabled: 1
-    path: Assets/Scenes/CameraWarp-Rowin.unity
-    guid: d3e912874abdb0341b8cfb8e3e20d3a7
-  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: e13b4be5e1695d64193c76c3113aba76
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CameraWarp.unity
     guid: 539ee13697dec274bb50596727ad3a4b
   m_configObjects: {}
