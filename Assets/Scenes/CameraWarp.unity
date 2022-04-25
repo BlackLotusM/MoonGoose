@@ -552,6 +552,7 @@ MonoBehaviour:
   hover1: {fileID: 1315921769}
   hover2: {fileID: 1940676711}
   lerpDuration: 0.25
+  holoManager: {fileID: 0}
 --- !u!135 &37429262
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -799,6 +800,7 @@ MonoBehaviour:
   hover1: {fileID: 1901361}
   hover2: {fileID: 1500958305}
   lerpDuration: 0.25
+  holoManager: {fileID: 0}
 --- !u!135 &48424712
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1271,8 +1273,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 1, b: 1, a: 0.6862745}
-      maxColor: {r: 0.6745283, g: 0.74997854, b: 1, a: 0.62352943}
+      minColor: {r: 1, g: 1, b: 1, a: 0.4392157}
+      maxColor: {r: 0.6745283, g: 0.74997854, b: 1, a: 0.25490198}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -20145,6 +20147,7 @@ MonoBehaviour:
   hover1: {fileID: 629899431}
   hover2: {fileID: 576047783}
   lerpDuration: 0.25
+  holoManager: {fileID: 0}
 --- !u!135 &1095882255
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27150,8 +27153,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.13679248, g: 0.33781347, b: 1, a: 1}
+      minColor: {r: 0.71595764, g: 0.8773585, b: 0.8668491, a: 0.59607846}
+      maxColor: {r: 0.36779106, g: 0.49029198, b: 0.8962264, a: 0.5372549}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -27213,7 +27216,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.12
+      scalar: 0.2
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -27529,7 +27532,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 1400
     size3D: 0
     rotation3D: 0
     gravityModifier:
