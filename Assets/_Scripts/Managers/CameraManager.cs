@@ -17,7 +17,6 @@ public class CameraManager : MonoBehaviour
     //TEMP MOVE TO BETTER PLACE
     public GameObject canvasMap;
     public GameObject btn_left, btn_right, btn_up, btn_down;
-    public QuestionManager questionManager;
 
     private void Start()
     {
@@ -134,8 +133,6 @@ public class CameraManager : MonoBehaviour
     public IEnumerator MoveCamToObject(Transform camPos, bool isQuestion = false, bool exitState = false)
     {
         done = false;
-        if (exitState && isQuestion)
-            questionManager.exitQuestion();
         time = 0.6f;
         Vector3 startingPos = mainCam.transform.position;
         Vector3 finalPos = camPos.position;
@@ -163,8 +160,6 @@ public class CameraManager : MonoBehaviour
         if(waypointPath.FirstOrDefault(x => x.waypointTransform == camPos) != null)
             currentIndex = waypointPath.FirstOrDefault(x => x.waypointTransform == camPos).index;
             currentWaypoint = getWaypointDate(currentIndex);
-        if(!exitState && isQuestion)
-            questionManager.openQuestion();
         running = null;
         setUIArrow();
     }
