@@ -54,6 +54,11 @@ public class DialogManager : MonoBehaviour
 
         if (currentDialog.currentSentenceIndex == currentDialog.sentences[currentDialog.currentConvoIndex].sentences.Length && !corIsRunning)
         {
+            if (currentDialog.sentences[currentDialog.currentConvoIndex].runEvent)
+            {
+                if(currentDialog.yourCustomEvent != null)
+                    currentDialog.yourCustomEvent.Invoke();
+            }
             if (currentDialog.sentences[currentDialog.currentConvoIndex].closeAfter)
             {
                 navigationUI.SetActive(true);

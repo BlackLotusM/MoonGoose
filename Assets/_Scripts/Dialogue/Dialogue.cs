@@ -12,4 +12,5 @@ public class DialogueManager
 {
     public Dialogue[] sentences;
     public bool closeAfter;
+    public bool runEvent = false;
 }

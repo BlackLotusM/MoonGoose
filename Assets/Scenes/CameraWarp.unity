@@ -21818,7 +21818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a248ff024d4a68341a63119ff2f3f648, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7548b2efcbc35b544b07b01357a5619d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25315,7 +25315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a248ff024d4a68341a63119ff2f3f648, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7548b2efcbc35b544b07b01357a5619d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33983,7 +33983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1268609642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34293,7 +34293,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1147.74
+  far clip plane: 25
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -34558,6 +34558,22 @@ MonoBehaviour:
       sentence: De tafel naast het raam. De tablet bevind zich bij de tafel naast
         het raam.
     closeAfter: 1
+    runEvent: 1
+  yourCustomEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1314059140}
+        m_TargetAssemblyTypeName: DialogTesting, Assembly-CSharp
+        m_MethodName: Foo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1315921769
 GameObject:
   m_ObjectHideFlags: 0
@@ -36005,7 +36021,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a248ff024d4a68341a63119ff2f3f648, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7548b2efcbc35b544b07b01357a5619d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36272,6 +36288,10 @@ MonoBehaviour:
     - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
       sentence: We hebben nog wat kannen over, dus we kunnen het nog een keer proberen?
     closeAfter: 1
+    runEvent: 0
+  yourCustomEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1384747231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36301,6 +36321,10 @@ MonoBehaviour:
       sentence: We sturen iets wat jou waarschijnlijk kan helpen als bedankje.  
         Groetjes aan je ouders en broertje (en dat pratende blik).
     closeAfter: 1
+    runEvent: 0
+  yourCustomEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1385860479
 GameObject:
   m_ObjectHideFlags: 0
@@ -37407,7 +37431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a248ff024d4a68341a63119ff2f3f648, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7548b2efcbc35b544b07b01357a5619d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -49653,6 +49677,7 @@ MonoBehaviour:
       sentence: Ze zijn te ver weg om het direct te sturen, maar je kan het naar
         een planeet in hun buurt schieten, zodat ze het daar op kunnen halen.
     closeAfter: 1
+    runEvent: 0
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
       sentence: Ik heb de locatie van de Aries familie vast in het systeem gezet.
@@ -49668,6 +49693,7 @@ MonoBehaviour:
         niet dat er minimaal {min}J en maximaal {max}J vrij mag komen wanneer ze
         vallen!
     closeAfter: 0
+    runEvent: 0
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
       sentence: Je kan op de planeten klikken om berekeningen in te vullen. Zorg
@@ -49677,6 +49703,10 @@ MonoBehaviour:
         ga ik mooi niets mee te maken hebben voor het geval het de verkeerde planeet
         was.
     closeAfter: 1
+    runEvent: 0
+  yourCustomEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1964795868
 MonoBehaviour:
   m_ObjectHideFlags: 0

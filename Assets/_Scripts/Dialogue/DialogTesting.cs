@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogTesting : MonoBehaviour
@@ -16,4 +17,11 @@ public class DialogTesting : MonoBehaviour
     public bool runOnStart;
 
     public DialogueManager[] sentences;
+
+    public UnityEvent yourCustomEvent;
+
+    public void Foo()
+    {
+        Debug.Log("testttt");
+    }
 }
