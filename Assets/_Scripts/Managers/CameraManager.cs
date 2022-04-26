@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public AudioSource audio;
     public int currentIndex;
     public Waypoint[] waypointPath;
     [SerializeField]
@@ -24,8 +25,9 @@ public class CameraManager : MonoBehaviour
 
         //Setup start postion waypoint 1
         currentWaypoint = getWaypointDate(currentIndex);
-        mainCam.transform.position = currentWaypoint.waypointTransform.position;
-        mainCam.transform.rotation = currentWaypoint.waypointTransform.rotation;
+        moveToIndex(currentIndex);
+        //mainCam.transform.position = currentWaypoint.waypointTransform.position;
+        //mainCam.transform.rotation = currentWaypoint.waypointTransform.rotation;
 
         setUIArrow();
     }
@@ -80,6 +82,7 @@ public class CameraManager : MonoBehaviour
 
     public void moveDir(int number)
     {
+        audio.Play();
         direction dir = (direction) number;
 
         switch (dir)
