@@ -19,9 +19,4 @@ public class DialogTesting : MonoBehaviour
     public DialogueManager[] sentences;
 
     public UnityEvent yourCustomEvent;
-
-    public void Foo()
-    {
-        Debug.Log("testttt");
-    }
 }

@@ -10960,7 +10960,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341710271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -11237,7 +11237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a39dbcaed66b6ca40a6c4c7179cbe0ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8515
+      value: 0.9263
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a39dbcaed66b6ca40a6c4c7179cbe0ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11249,19 +11249,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a39dbcaed66b6ca40a6c4c7179cbe0ad, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a39dbcaed66b6ca40a6c4c7179cbe0ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.9008419
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a39dbcaed66b6ca40a6c4c7179cbe0ad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.43414727
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a39dbcaed66b6ca40a6c4c7179cbe0ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 51.462
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a39dbcaed66b6ca40a6c4c7179cbe0ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -12234,7 +12234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2321893911418493560, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0037121465
+      value: -0.0014206965
       objectReference: {fileID: 0}
     - target: {fileID: 2321893911684607874, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
       propertyPath: m_Name
@@ -13148,8 +13148,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13901,17 +13901,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527881868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
-  outlineWidth: 4.71
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &527881874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527881868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546b8c7cb7f44fd47a8721d28b60ccfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 527881872}
+  isActive: 0
+  started: 0
+  blink: 0
 --- !u!1 &536351945
 GameObject:
   m_ObjectHideFlags: 0
@@ -34254,6 +34270,8 @@ GameObject:
   - component: {fileID: 1314059138}
   - component: {fileID: 1314059139}
   - component: {fileID: 1314059140}
+  - component: {fileID: 1314059141}
+  - component: {fileID: 1314059142}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -34562,9 +34580,9 @@ MonoBehaviour:
   yourCustomEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1314059140}
-        m_TargetAssemblyTypeName: DialogTesting, Assembly-CSharp
-        m_MethodName: Foo
+      - m_Target: {fileID: 1314059141}
+        m_TargetAssemblyTypeName: RotateCameraPivotAndCamera, Assembly-CSharp
+        m_MethodName: StartRotate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34574,6 +34592,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 527881874}
+        m_TargetAssemblyTypeName: enableBlink, Assembly-CSharp
+        m_MethodName: StartBlink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1314059142}
+        m_TargetAssemblyTypeName: StartArrowTut, Assembly-CSharp
+        m_MethodName: StartBlink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1314059141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314059132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4944d8909b2f7c45b0638adb59971c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPos: {fileID: 1000542030}
+--- !u!114 &1314059142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314059132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b93a66003744f4e85c6abf2910cd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledArrows:
+  - {fileID: 756301971}
+  - {fileID: 977661523}
+  - {fileID: 1438533335}
+  enabledArrow: {fileID: 1380872715}
+  isActive: 0
 --- !u!1 &1315921769
 GameObject:
   m_ObjectHideFlags: 0

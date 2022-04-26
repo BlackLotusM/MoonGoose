@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class RotateCameraPivotAndCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject firstPos;
+    public void StartRotate()
     {
-        
+        StartCoroutine(MoveCamToObject());
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator MoveCamToObject()
     {
-        
+        float duration = 2.0f;
+
+        // store the initial and target rotation once
+        var startRotation = transform.rotation;
+        var targetRotation = Quaternion.LookRotation(new Vector3(0,0,0) - transform.position);
+
+        for (float timePassed = 0.0f; timePassed < duration; timePassed += Time.deltaTime)
+        {
+            float factor = timePassed / duration;
+            // optionally add ease-in and -out
+            //factor = Mathf.SmoothStep(0, 1, factor);
+
+            transform.rotation = Quaternion.Slerp(startRotation, targetRotation, factor);
+            yield return null;
+        }
+
+        // just to be sure to end up with clean values
+        transform.rotation = targetRotation;
+        firstPos.transform.rotation = targetRotation;
     }
 }
