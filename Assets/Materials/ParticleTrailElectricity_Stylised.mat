@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ParticleTrailElectricity01
+  m_Name: ParticleTrailElectricity_Stylised
   m_Shader: {fileID: 4800000, guid: 1bc5c6a70411243779ce486a98012125, type: 3}
   m_ShaderKeywords: _ALPHA_TRANSITION_MAP_MODE_2D _BASE_MAP_MODE_2D _EMISSION _EMISSION_AREA_MAP
     _EMISSION_COLOR_BASECOLOR _EMISSION_MAP_MODE_2D _TINT_AREA_ALL _TINT_COLOR_ENABLED
@@ -199,9 +199,9 @@ Material:
     - _KeepEdgeTransparency: 1
     - _LightingEnabled: 0
     - _LuminanceTransparencyEnabled: 0
-    - _LuminanceTransparencyProgress: 0.5
+    - _LuminanceTransparencyProgress: 0.288
     - _LuminanceTransparencyProgressCoord: 0
-    - _LuminanceTransparencySharpness: 0.5
+    - _LuminanceTransparencySharpness: 0.8
     - _LuminanceTransparencySharpnessCoord: 0
     - _Metallic: 0
     - _Mode: 4
