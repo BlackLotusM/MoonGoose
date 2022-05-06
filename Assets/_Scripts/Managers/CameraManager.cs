@@ -17,55 +17,42 @@ public class CameraManager : MonoBehaviour
     public Waypoint currentWaypoint;
     //TEMP MOVE TO BETTER PLACE
     public GameObject canvasMap;
-    public GameObject btn_left, btn_right, btn_up, btn_down;
+    public StateUpdater btn_left, btn_right, btn_up, btn_down;
 
     private void Start()
     {
         mainCam = Camera.main;
-
-        //Setup start postion waypoint 1
         currentWaypoint = getWaypointDate(currentIndex);
         moveToIndex(currentIndex);
-        //mainCam.transform.position = currentWaypoint.waypointTransform.position;
-        //mainCam.transform.rotation = currentWaypoint.waypointTransform.rotation;
-
         setUIArrow();
     }
+
+    
 
     public void setUIArrow()
     {
         if (currentWaypoint.targets.left)
-            btn_left.SetActive(true);
+            btn_left.inActive = false;
         else
-            btn_left.SetActive(false);
+            btn_left.inActive = true;
 
         if (currentWaypoint.targets.right)
-            btn_right.SetActive(true);
+            btn_right.inActive = false;
         else
-            btn_right.SetActive(false);
+            btn_right.inActive = true;
 
 
         if (currentWaypoint.targets.up)
-            btn_up.SetActive(true);
+            btn_up.inActive = false;
         else
-            btn_up.SetActive(false);
+            btn_up.inActive = true;
 
         if (currentWaypoint.targets.down)
-            btn_down.SetActive(true);
+            btn_down.inActive = false;
         else
-            btn_down.SetActive(false);
+            btn_down.inActive = true;
     }
     // Update is called once per frame
-    void Update()
-    {
-        //TEMP MOVE TO BETTER PLACE
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            canvasMap.SetActive(!canvasMap.activeSelf);
-        }
-        if (atObject)
-            return;
-    }
 
     public Waypoint getWaypointDate(int index)
     {

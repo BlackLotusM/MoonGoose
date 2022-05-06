@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Papa
   m_EditorClassIdentifier: 
   characterName: Papa
-  profilePic: {fileID: 21300000, guid: 707a80e22b03a334fa5977d179c24834, type: 3}
+  profilePic: {fileID: 21300000, guid: 0984945b47e24a442a35b0cf4a45bc67, type: 3}

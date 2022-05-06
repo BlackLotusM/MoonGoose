@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Leerling
   m_EditorClassIdentifier: 
   characterName: Temp
-  profilePic: {fileID: 0}
+  profilePic: {fileID: 21300000, guid: 5d6fd256064100c41a2eff6743c9cb58, type: 3}

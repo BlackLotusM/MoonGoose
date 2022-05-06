@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class SameWithEditor : MonoBehaviour
 {
-   
+    public float height = 105;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class SameWithEditor : MonoBehaviour
         rect = GetComponent<RectTransform>();
         group = GetComponent<GridLayoutGroup>();
 
-        Vector2 newSize = new Vector2(rect.rect.width, 105);
+        Vector2 newSize = new Vector2(rect.rect.width, height);
         group.cellSize = newSize;
     }
 

@@ -47,6 +47,7 @@ public class DialogManager : MonoBehaviour
     {
         if (!currentDialog.active)
         {
+            panel.SetActive(false);
             return;
         }
         if (!corIsRunning)
@@ -56,8 +57,8 @@ public class DialogManager : MonoBehaviour
         {
             if (currentDialog.sentences[currentDialog.currentConvoIndex].runEvent)
             {
-                if(currentDialog.yourCustomEvent != null)
-                    currentDialog.yourCustomEvent.Invoke();
+                if(currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent != null)
+                    currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent.Invoke();
             }
             if (currentDialog.sentences[currentDialog.currentConvoIndex].closeAfter)
             {
@@ -111,7 +112,6 @@ public class DialogManager : MonoBehaviour
     }
     public IEnumerator typeSentence(Dialogue sentence)
     {
-        
         txtDialogue.text = "";
         characterProfile.sprite = sentence.characterOBJ.profilePic;
         characterName.text = sentence.characterOBJ.characterName;
@@ -126,5 +126,7 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(sentenceSpeed);
         }
         corIsRunning = false;
+        if (currentDialog.currentConvoIndex == currentDialog.sentences.Length - 1 && currentDialog.currentSentenceIndex == currentDialog.sentences[currentDialog.currentConvoIndex].sentences.Length - 1)
+            currentDialog.active = false;
     }
 }

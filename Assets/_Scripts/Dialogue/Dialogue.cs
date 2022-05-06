@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class Dialogue
@@ -13,4 +14,5 @@ public class DialogueManager
     public Dialogue[] sentences;
     public bool closeAfter;
     public bool runEvent = false;
+    public UnityEvent yourCustomEvent;
 }

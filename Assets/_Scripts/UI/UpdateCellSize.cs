@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class UpdateCellSize : MonoBehaviour
 {
+    public float div = 4;
     private RectTransform rect;
     private GridLayoutGroup group;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class UpdateCellSize : MonoBehaviour
     void Update()
     {
         float width = rect.rect.width;
-        Vector2 newSize = new Vector2(width / 4, rect.rect.height);
+        Vector2 newSize = new Vector2(width / div, rect.rect.height);
         group.cellSize = newSize;
     }
 }

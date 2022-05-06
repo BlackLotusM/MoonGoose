@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: n6000
   m_EditorClassIdentifier: 
   characterName: N6000
-  profilePic: {fileID: 21300000, guid: d300441dfb74f814fb8dbbed664813d9, type: 3}
+  profilePic: {fileID: 21300000, guid: b698900050bf4c846bfa3a0c50389444, type: 3}

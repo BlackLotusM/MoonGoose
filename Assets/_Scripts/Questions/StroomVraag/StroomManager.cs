@@ -6,11 +6,25 @@ using UnityEngine;
 
 public class StroomManager : MonoBehaviour
 {
+    public TextMeshProUGUI oxygenSupplierTXT;
+    public TextMeshProUGUI batteryTXT;
     public TextMeshProUGUI[] textNumber;
     public List<int> numberList = new List<int> { 0, 0, 0, 0 };
     public int correctAnswer = 1234;
     private void Start()
     {
+        GenerateQuestion();
+        UpdateUI();
+    }
+
+    public void GenerateQuestion()
+    {
+        numberList = new List<int> { 0, 0, 0, 0 };
+        int _capaciteitBaterij = UnityEngine.Random.Range(3333, 8888);
+        int _gebruikOxygenSypply = UnityEngine.Random.Range(1000, _capaciteitBaterij);
+        batteryTXT.text = "Cappaciteit Baterij: "+ _capaciteitBaterij + "\n WattUur" ;
+        oxygenSupplierTXT.text = (decimal)_gebruikOxygenSypply / 1000 + " kWh";
+        correctAnswer = _capaciteitBaterij - _gebruikOxygenSypply;
         UpdateUI();
     }
 
