@@ -11,6 +11,7 @@ public class Vraag3 : MonoBehaviour
     [SerializeField]
     private Sprite[] windEnergie, windInfo, waterEnergie, waterInfo, zonEnergie, zonInfo;
     public Image targetImage;
+    public Image uitlegTarget;
     public int correctBtn;
 
     //used for randomize
@@ -21,12 +22,15 @@ public class Vraag3 : MonoBehaviour
     public IEnumerator running;
     public float waitTime;
 
+    public int activeInt = 0;
+
     [Serializable]
     public class Collect
     {
         public int picState = 0;
         public int btnInt;
         public List<Sprite> sprites = new List<Sprite>();
+        public Sprite uitleg;
     }
 
     private void Start()
@@ -37,6 +41,8 @@ public class Vraag3 : MonoBehaviour
 
     private void Update()
     {
+        targetImage.sprite = intPicState[activeInt].sprites[intPicState[activeInt].picState];
+        uitlegTarget.sprite = intPicState[activeInt].uitleg;
         if (Input.GetKeyDown(KeyCode.R))
         {
             SetAnswer();
@@ -57,10 +63,12 @@ public class Vraag3 : MonoBehaviour
             foreach (Collect item in intPicState)
             {
                 item.picState -= 1;
-               
             }
         }
+
+        
     }
+
     public void SetAnswer()
     {
         StopCoroutine(running);
@@ -83,6 +91,10 @@ public class Vraag3 : MonoBehaviour
                 temp.btnInt = selected;
                 correctBtn = selected;
                 temp.picState = 0;
+                if (r == 0)
+                    temp.uitleg = zonInfo[r];
+                else
+                    temp.uitleg = zonInfo[r - 1];
                 temp.sprites.Add(zonEnergie[r]);
                 temp.sprites.Add(zonEnergie[r + 1]);
                 intPicState.Insert(i, temp);
@@ -95,6 +107,10 @@ public class Vraag3 : MonoBehaviour
                 temp.btnInt = selected;
                 temp.picState = 0;
                 temp.sprites.Add(windEnergie[r2]);
+                if (r2 == 0)
+                    temp.uitleg = windInfo[r2];
+                else
+                    temp.uitleg = windInfo[r2 - 1];
                 temp.sprites.Add(windEnergie[r2 + 1]);
                 intPicState.Insert(i, temp);
             }
@@ -106,12 +122,21 @@ public class Vraag3 : MonoBehaviour
                 temp.btnInt = selected;
                 temp.picState = 0;
                 temp.sprites.Add(waterEnergie[r3]);
+                if (r3 == 0)
+                    temp.uitleg = waterInfo[r3];
+                else
+                    temp.uitleg = waterInfo[r3 - 1];
                 temp.sprites.Add(waterEnergie[r3 + 1]);
                 intPicState.Insert(i, temp);
             }
         }
         running = updateNum();
         StartCoroutine(running);
+    }
+
+    public void ChangeInxdex(int index)
+    {
+        activeInt = index;
     }
 
     public void CheckAnswer(int value)
