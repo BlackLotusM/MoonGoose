@@ -8,6 +8,7 @@ public class SetTextBoxSize : MonoBehaviour
 {
     public GridLayoutGroup group;
     private RectTransform rect;
+    public float heightNew;
     public float standardWidth = 200;
     // Start is called before the first frame update
 
@@ -20,7 +21,11 @@ public class SetTextBoxSize : MonoBehaviour
         float height = rect.rect.height;
         if (widht < standardWidth)
             widht = standardWidth;
-        Vector2 newSize = new Vector2(widht, height);
+        if(heightNew == 0)
+        {
+            heightNew = height;
+        }
+        Vector2 newSize = new Vector2(widht, heightNew);
         group.cellSize = newSize;
     }
 }
