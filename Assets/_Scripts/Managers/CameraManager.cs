@@ -27,8 +27,6 @@ public class CameraManager : MonoBehaviour
         setUIArrow();
     }
 
-    
-
     public void setUIArrow()
     {
         if (currentWaypoint.targets.left)

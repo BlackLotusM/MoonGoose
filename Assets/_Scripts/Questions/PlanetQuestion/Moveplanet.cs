@@ -51,11 +51,17 @@ public class Moveplanet : MonoBehaviour
     [SerializeField]
     private float lerpDuration = 3;
 
-    private CameraManager camMan;
+    public CameraManager camMan;
 
     public HoloActivate holoManager;
 
-
+    private void Start()
+    {
+        holoManager = FindObjectOfType<HoloActivate>();
+        initialScale = transform.localScale;
+        mapInfoCanvasDone.SetActive(false);
+        SetText();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -82,14 +88,7 @@ public class Moveplanet : MonoBehaviour
     {
         QuestionCanvasState(true);
         Camera.main.transform.position = targetCam.position;
-    }
-    public void Start()
-    {
-        holoManager = FindObjectOfType<HoloActivate>();
-        initialScale = transform.localScale;
-        camMan = FindObjectOfType<CameraManager>();
-        mapInfoCanvasDone.SetActive(false);
-        SetText();
+        Camera.main.transform.rotation = targetCam.rotation;
     }
 
     private void SetText()
