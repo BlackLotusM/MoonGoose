@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotateCameraPivotAndCamera : MonoBehaviour
 {
     public GameObject firstPos;
+    public GameObject navigationPanel;
     public void StartRotate()
     {
         StartCoroutine(MoveCamToObject());
@@ -12,6 +13,7 @@ public class RotateCameraPivotAndCamera : MonoBehaviour
 
     public IEnumerator MoveCamToObject()
     {
+        navigationPanel.SetActive(false);
         float duration = 2.0f;
 
         // store the initial and target rotation once
@@ -28,6 +30,7 @@ public class RotateCameraPivotAndCamera : MonoBehaviour
             yield return null;
         }
 
+        navigationPanel.SetActive(true);
         // just to be sure to end up with clean values
         transform.rotation = targetRotation;
         firstPos.transform.rotation = targetRotation;

@@ -7,25 +7,35 @@ using UnityEngine.UI;
 
 public class HoloActivate : MonoBehaviour
 {
+    public bool isActive;
+
     public Moveplanet[] planets;
     public ParticleSystem particle;
     public ParticleSystem particle2;
     
     public int activeButton = -1;
-    public DialogTesting test;
     public DialogTesting correct;
     public DialogTesting inCorrect;
     public DialogManager manager;
     public GameObject[] buttons;
 
+    public DialogTesting uitlegDialog;
+
     public float gewicht;
     public float meters;
     public float correcteAntwoord;
 
+    public CameraManager cam;
+    public int wayPointIndex;
+
+    public void SetAcitve()
+    {
+        isActive = true;
+    }
+
     private void Start()
     {
         manager = FindObjectOfType<DialogManager>();
-        manager.currentDialog = test;
         foreach (GameObject button in buttons)
         {
             button.SetActive(false);
@@ -36,7 +46,9 @@ public class HoloActivate : MonoBehaviour
 
     private void OnMouseDown()
     {
-        manager.startSentence();
+        if (!isActive)
+            return;
+        uitlegDialog.SetAndStart();
         manager.activateObject();
 
         foreach (Moveplanet planet in planets)
@@ -46,6 +58,15 @@ public class HoloActivate : MonoBehaviour
     }
     private void Update()
     {
+        if(cam.currentIndex != wayPointIndex)
+        {
+            foreach (Moveplanet planet in planets)
+            {
+                if(planet.planetActive == true)
+                    planet.updateState();
+            }
+        }
+
         if (planets[0].planetActive)
         {
             if (particle.gameObject.transform.localScale.x < 1f)
@@ -102,7 +123,10 @@ public class HoloActivate : MonoBehaviour
 
         gewicht = (float)Math.Round(UnityEngine.Random.Range(2.1f, 12.5f) * 10f) * 0.1f;
         meters = UnityEngine.Random.Range(1, 8);
-        manager.gewicht = gewicht;
+        gewicht = 8.400001f;
+        string GewichtS = gewicht.ToString().Substring(0, 3);
+        Debug.Log(GewichtS);
+        manager.gewicht = float.Parse(GewichtS);
         manager.meter = meters;
 
         float zwaarteKracht1 = (float)Math.Round(UnityEngine.Random.Range(9.00f, 12.00f) * 100f) / 100f;

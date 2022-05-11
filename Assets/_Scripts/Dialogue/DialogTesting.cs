@@ -15,4 +15,15 @@ public class DialogTesting : MonoBehaviour
     public bool runOnStart;
 
     public DialogueManager[] sentences;
+    public DialogManager dm;
+
+    private void Start()
+    {
+        dm = FindObjectOfType<DialogManager>();
+    }
+    public void SetAndStart()
+    {
+        dm.currentDialog = this;
+        dm.startSentence();
+    }
 }

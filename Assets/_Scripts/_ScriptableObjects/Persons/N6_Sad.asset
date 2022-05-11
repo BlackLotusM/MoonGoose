@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2e16ea350a430e4683505f2f6661609, type: 3}
-  m_Name: n6000
+  m_Name: N6_Sad
   m_EditorClassIdentifier: 
   characterName: N6000
-  profilePic: {fileID: 21300000, guid: b698900050bf4c846bfa3a0c50389444, type: 3}
+  profilePic: {fileID: 21300000, guid: 6e235aef216386448906969ffcf6f836, type: 3}

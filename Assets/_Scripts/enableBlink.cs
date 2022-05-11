@@ -8,7 +8,7 @@ public class enableBlink : MonoBehaviour
     public bool isActive;
 
     float duration = 1; // In seconds
-    float maxValue = 3;
+    public float maxValue = 3;
     public bool started;
     public bool blink;
 

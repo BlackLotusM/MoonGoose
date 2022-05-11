@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public AudioSource audio;
+    public new AudioSource audio;
     public int currentIndex;
     public Waypoint[] waypointPath;
     [SerializeField]
@@ -18,6 +18,12 @@ public class CameraManager : MonoBehaviour
     //TEMP MOVE TO BETTER PLACE
     public GameObject canvasMap;
     public StateUpdater btn_left, btn_right, btn_up, btn_down;
+    public bool enableFreeMove;
+
+    public void EnableFreeMove()
+    {
+        enableFreeMove = true;
+    }
 
     private void Start()
     {
@@ -67,6 +73,8 @@ public class CameraManager : MonoBehaviour
 
     public void moveDir(int number)
     {
+        if (!enableFreeMove)
+            return;
         audio.Play();
         direction dir = (direction) number;
 
@@ -110,6 +118,7 @@ public class CameraManager : MonoBehaviour
 
     public void moveToIndex(int number)
     {
+        currentIndex = number;
         currentWaypoint = getWaypointDate(number);
         if (running != null || !currentWaypoint.waypointTransform)
             return;

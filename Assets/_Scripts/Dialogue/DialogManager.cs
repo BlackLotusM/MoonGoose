@@ -16,7 +16,6 @@ public class DialogManager : MonoBehaviour
     public float minJ;
     public float maxJ;
 
-
     public float sentenceSpeed = 0.09f;
     public GameObject panel;
 
@@ -39,7 +38,7 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        if (currentDialog.runOnStart)
+        if (currentDialog && currentDialog.runOnStart)
             startSentence();
     }
 
@@ -62,7 +61,8 @@ public class DialogManager : MonoBehaviour
             }
             if (currentDialog.sentences[currentDialog.currentConvoIndex].closeAfter)
             {
-                navigationUI.SetActive(true);
+                if(!currentDialog.sentences[currentDialog.currentConvoIndex].keepNavClosed)
+                    navigationUI.SetActive(true);
                 panel.SetActive(false);
                 currentDialog.currentSentenceIndex = -1;
             }
