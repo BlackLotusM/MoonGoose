@@ -21,12 +21,13 @@ public class HoloActivate : MonoBehaviour
 
     public DialogTesting uitlegDialog;
 
-    public float gewicht;
-    public float meters;
-    public float correcteAntwoord;
+    public double gewicht;
+    public double meters;
+    public double correcteAntwoord;
 
     public CameraManager cam;
     public int wayPointIndex;
+    private QuestionShow showQuestion;
 
     public void SetAcitve()
     {
@@ -35,6 +36,7 @@ public class HoloActivate : MonoBehaviour
 
     private void Start()
     {
+        showQuestion = FindObjectOfType<QuestionShow>();
         manager = FindObjectOfType<DialogManager>();
         foreach (GameObject button in buttons)
         {
@@ -50,6 +52,7 @@ public class HoloActivate : MonoBehaviour
             return;
         uitlegDialog.SetAndStart();
         manager.activateObject();
+        showQuestion.StateText(true);
 
         foreach (Moveplanet planet in planets)
         {
@@ -65,6 +68,7 @@ public class HoloActivate : MonoBehaviour
                 if(planet.planetActive == true)
                     planet.updateState();
             }
+            showQuestion.StateText(false);
         }
 
         if (planets[0].planetActive)
@@ -121,20 +125,18 @@ public class HoloActivate : MonoBehaviour
     public void ResetPlanets()
     {
 
-        gewicht = (float)Math.Round(UnityEngine.Random.Range(2.1f, 12.5f) * 10f) * 0.1f;
+        gewicht = Math.Round(UnityEngine.Random.Range(2f, 12.5f), 2);
+        gewicht = double.Parse(String.Format("{0:0.0}", gewicht));
         meters = UnityEngine.Random.Range(1, 8);
-        gewicht = 8.400001f;
-        string GewichtS = gewicht.ToString().Substring(0, 3);
-        Debug.Log(GewichtS);
-        manager.gewicht = float.Parse(GewichtS);
+        manager.gewicht = gewicht;
         manager.meter = meters;
 
-        float zwaarteKracht1 = (float)Math.Round(UnityEngine.Random.Range(9.00f, 12.00f) * 100f) / 100f;
-        float minAnswer = zwaarteKracht1 - 3;
-        float maxAnswer = zwaarteKracht1 + 2;
+        double zwaarteKracht1 = (double)Math.Round(UnityEngine.Random.Range(9.00f, 12.00f) * 100f) / 100f;
+        float minAnswer = (float)zwaarteKracht1 - 3;
+        float maxAnswer = (float)zwaarteKracht1 + 2;
 
-        float zwaarteKracht2 = (float)Math.Round(UnityEngine.Random.Range(minAnswer - 2.9f, minAnswer) * 100f) / 100f;
-        float zwaarteKracht3 = (float)Math.Round(UnityEngine.Random.Range(maxAnswer, maxAnswer + 5.5f) * 100f) / 100f;
+        double zwaarteKracht2 = (double)Math.Round(UnityEngine.Random.Range(minAnswer - 2.9f, minAnswer) * 100) / 100;
+        double zwaarteKracht3 = (double)Math.Round(UnityEngine.Random.Range(maxAnswer, maxAnswer + 5.5f) * 100f) / 100f;
 
         planets[0].SetNewValues(zwaarteKracht2);
         planets[1].SetNewValues(zwaarteKracht1);
@@ -147,7 +149,7 @@ public class HoloActivate : MonoBehaviour
 
         int correctPlanet = UnityEngine.Random.Range(0, planets.Length);
 
-        float correctJ = gewicht * meters * planets[correctPlanet].zwaartekracht;
+        double correctJ = gewicht * meters * planets[correctPlanet].zwaartekracht;
         correcteAntwoord = correctJ;
         manager.minJ = (int)(correctJ - 5);
         manager.maxJ = (int)(correctJ + 5);

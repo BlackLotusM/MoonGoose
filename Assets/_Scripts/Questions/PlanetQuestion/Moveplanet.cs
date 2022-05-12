@@ -8,8 +8,8 @@ public class Moveplanet : MonoBehaviour
 {
     [Header("PlanetInfo")]
     public string naam;
-    public float zwaartekracht = 0;
-    public float correcteAntwoord;
+    public double zwaartekracht = 0;
+    public double correcteAntwoord;
     [SerializeField]
     private Transform targetActive;
     [SerializeField]
@@ -103,7 +103,7 @@ public class Moveplanet : MonoBehaviour
         QuestionCanvasState(false);
     }
 
-    public void SetNewValues(float newZwaarte)
+    public void SetNewValues(double newZwaarte)
     {
         zwaartekracht = newZwaarte;
         SetText();
@@ -118,7 +118,13 @@ public class Moveplanet : MonoBehaviour
 
         string temp = answer.Remove(0, 14);
         temp = temp.Remove(temp.Length - 1, 1);
-        if (float.Parse(temp) == correcteAntwoord)
+        double filled = double.Parse(temp);
+
+        double difference = Math.Abs(correcteAntwoord * .00001);
+
+        Debug.Log(filled + " + " + correcteAntwoord);
+        
+        if ((decimal)correcteAntwoord == (decimal)filled)
         {
             Debug.Log("Antwoord is correct");
         }

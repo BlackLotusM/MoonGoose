@@ -9,16 +9,9 @@ public class TabletHandler : MonoBehaviour
     public DialogManager dm;
     public DialogTesting closeTablet;
 
-    // Start is called before the first frame update
-    void Start()
+    public void TabletState()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.M) && pickedUp)
+        if (pickedUp)
         {
             canvasMap.SetActive(!canvasMap.activeSelf);
         }

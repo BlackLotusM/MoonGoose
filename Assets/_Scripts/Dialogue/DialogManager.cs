@@ -11,10 +11,10 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI txtDialogue;
     public GameObject navigationUI;
 
-    public float meter;
-    public float gewicht;
-    public float minJ;
-    public float maxJ;
+    public double meter;
+    public double gewicht;
+    public double minJ;
+    public double maxJ;
 
     public float sentenceSpeed = 0.09f;
     public GameObject panel;
