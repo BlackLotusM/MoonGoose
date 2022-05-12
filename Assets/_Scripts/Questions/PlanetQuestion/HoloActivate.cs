@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class HoloActivate : MonoBehaviour
 {
     public bool isActive;
+    public bool enableClick = false;
 
     public Moveplanet[] planets;
     public ParticleSystem particle;
@@ -45,10 +46,14 @@ public class HoloActivate : MonoBehaviour
 
         ResetPlanets();
     }
+    public void EnableClick()
+    {
+        enableClick = true;
+    }
 
     private void OnMouseDown()
     {
-        if (!isActive)
+        if (!isActive || !enableClick)
             return;
         uitlegDialog.SetAndStart();
         manager.activateObject();
