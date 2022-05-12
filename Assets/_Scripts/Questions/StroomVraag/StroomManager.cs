@@ -11,6 +11,10 @@ public class StroomManager : MonoBehaviour
     public TextMeshProUGUI[] textNumber;
     public List<int> numberList = new List<int> { 0, 0, 0, 0 };
     public int correctAnswer = 1234;
+
+    public DialogTesting correct;
+    public DialogTesting incorrect;
+
     private void Start()
     {
         GenerateQuestion();
@@ -60,8 +64,8 @@ public class StroomManager : MonoBehaviour
             temp += numberList[i];
         }
         if (correctAnswer == Convert.ToInt32(temp))
-            Debug.Log("Correct");
+            correct.SetAndStart();
         else
-            Debug.Log("False");
+            incorrect.SetAndStart();
     }
 }

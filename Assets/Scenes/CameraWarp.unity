@@ -9484,6 +9484,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255851929}
   m_CullTransparentMesh: 1
+--- !u!1 &270793740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 112e8d34bad087f4ab81a2db9d6f1e28, type: 3}
+  m_PrefabInstance: {fileID: 567986754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &270793741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270793740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6009297ef0864c4db6609f14869953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentConvoIndex: 0
+  currentSentenceIndex: -1
+  sentenceSpeed: 0.09
+  active: 1
+  runOnStart: 0
+  sentences:
+  - sentences:
+    - characterOBJ: {fileID: 11400000, guid: 01156b373733ea849bf67017d08374f5, type: 2}
+      sentence: 'Ah, ze heeft al de top drie opties gevonden. '
+    - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
+      sentence: Kijkend naar de omstandigheden in de ruimte gaan ze waarschijnlijk
+        niet allemaal werken.
+    - characterOBJ: {fileID: 11400000, guid: cc0c64a8b4ee57b43a4d8244ea07c999, type: 2}
+      sentence: Ik laat het aan jou, welke energie opwekker kunnen wij inzetten als
+        back-up energiebron?
+    closeAfter: 0
+    runEvent: 0
+    keepNavClosed: 0
+    yourCustomEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  dm: {fileID: 0}
+--- !u!65 &270793742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270793740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6820301, y: 0.18243545, z: 2.2102003}
+  m_Center: {x: 0.03301394, y: -0.12669012, z: 0.33608735}
+--- !u!114 &270793743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270793740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f51ae5acd140f84985abaabfca3fb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 270793741}
+  disabelCollWhenDone: 1
 --- !u!1 &273161045
 GameObject:
   m_ObjectHideFlags: 0
@@ -13620,6 +13686,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493513996}
   m_CullTransparentMesh: 1
+--- !u!1 &495848120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2997775377306320296, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+  m_PrefabInstance: {fileID: 4809940738442177251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &495848125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495848120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6009297ef0864c4db6609f14869953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentConvoIndex: 0
+  currentSentenceIndex: -1
+  sentenceSpeed: 0.09
+  active: 1
+  runOnStart: 0
+  sentences:
+  - sentences:
+    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
+      sentence: Zo te zien heeft Gaia de opties naar de grote monitor gestuurd.
+    closeAfter: 0
+    runEvent: 0
+    keepNavClosed: 0
+    yourCustomEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  dm: {fileID: 0}
 --- !u!1 &507812869
 GameObject:
   m_ObjectHideFlags: 0
@@ -22297,6 +22396,8 @@ GameObject:
   - component: {fileID: 731615558}
   - component: {fileID: 731615560}
   - component: {fileID: 731615559}
+  - component: {fileID: 731615562}
+  - component: {fileID: 731615561}
   m_Layer: 5
   m_Name: Vraag3
   m_TagString: Untagged
@@ -22466,6 +22567,8 @@ MonoBehaviour:
   intPicState: []
   waitTime: 1
   activeInt: 0
+  correct: {fileID: 731615562}
+  incorrect: {fileID: 731615561}
 --- !u!225 &731615559
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -22491,6 +22594,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
+--- !u!114 &731615561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731615553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6009297ef0864c4db6609f14869953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentConvoIndex: 0
+  currentSentenceIndex: -1
+  sentenceSpeed: 0.09
+  active: 1
+  runOnStart: 0
+  sentences:
+  - sentences:
+    - characterOBJ: {fileID: 11400000, guid: 7c3067099e116f84297068f1785687b8, type: 2}
+      sentence: Oef, ik denk dat we maar beter niet voor deze optie kunnen gaan...
+    - characterOBJ: {fileID: 11400000, guid: 602f8b56926acf1448060ca1a2af68cb, type: 2}
+      sentence: Ik zal snel onze reactie naar Gaia verwijderen! Laten we opnieuw
+        kijken naar de opties!
+    closeAfter: 1
+    runEvent: 0
+    keepNavClosed: 0
+    yourCustomEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  dm: {fileID: 0}
+--- !u!114 &731615562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731615553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6009297ef0864c4db6609f14869953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentConvoIndex: 0
+  currentSentenceIndex: -1
+  sentenceSpeed: 0.09
+  active: 1
+  runOnStart: 0
+  sentences:
+  - sentences:
+    - characterOBJ: {fileID: 11400000, guid: 01156b373733ea849bf67017d08374f5, type: 2}
+      sentence: Dat ziet er goed uit! We hebben geen wind in de ruimte dus die optie
+        had niet gewerkt en we kunnen natuurlijk ook niet met zekerheid zeggen dat
+        water zich juist gedraagd met de nieuwe ruimte eigenschappen. De zon kunnen
+        vanaf hier goed benaderen!
+    - characterOBJ: {fileID: 11400000, guid: 4aa56379ecdf0fa4789a1ab12a8054d7, type: 2}
+      sentence: Super, *naam leerling*. Ik wist dat ik op je kon rekenen! Dankzij
+        je snelle reactie kunnen we de opwekker zelfs ophalen zonder om te moeten
+        reizen! Tot snel <3
+    closeAfter: 1
+    runEvent: 0
+    keepNavClosed: 0
+    yourCustomEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  dm: {fileID: 0}
 --- !u!1 &750140958
 GameObject:
   m_ObjectHideFlags: 0
@@ -23775,6 +23944,8 @@ GameObject:
   m_Component:
   - component: {fileID: 799535652}
   - component: {fileID: 799535653}
+  - component: {fileID: 799535655}
+  - component: {fileID: 799535654}
   m_Layer: 0
   m_Name: QuestionStroom
   m_TagString: Untagged
@@ -23817,7 +23988,73 @@ MonoBehaviour:
   - {fileID: 52904113}
   numberList: 00000000000000000000000000000000
   correctAnswer: 1234
+  correct: {fileID: 799535655}
+  incorrect: {fileID: 799535654}
   temp: 
+--- !u!114 &799535654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799535651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6009297ef0864c4db6609f14869953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentConvoIndex: 0
+  currentSentenceIndex: -1
+  sentenceSpeed: 0.09
+  active: 1
+  runOnStart: 0
+  sentences:
+  - sentences:
+    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+      sentence: Ik wist niet dat ik zo slecht gezelschap was.
+    closeAfter: 1
+    runEvent: 0
+    keepNavClosed: 0
+    yourCustomEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  dm: {fileID: 0}
+--- !u!114 &799535655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799535651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6009297ef0864c4db6609f14869953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentConvoIndex: 0
+  currentSentenceIndex: -1
+  sentenceSpeed: 0.09
+  active: 1
+  runOnStart: 0
+  sentences:
+  - sentences:
+    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
+      sentence: De kabel is gerepareerd! Hoe gaat het hier?
+    - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
+      sentence: ...
+    - characterOBJ: {fileID: 11400000, guid: 602f8b56926acf1448060ca1a2af68cb, type: 2}
+      sentence: Interessante keuze... Heb je toevallig een zuurstofmasker in de buurt?
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
+      sentence: Grapje, grapje, it should be fine!
+    - characterOBJ: {fileID: 11400000, guid: da19e2584136ed44599c1899799b4207, type: 2}
+      sentence: Wat zijn we toch een geweldig team!
+    closeAfter: 1
+    runEvent: 0
+    keepNavClosed: 0
+    yourCustomEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  dm: {fileID: 0}
 --- !u!1 &824837792
 GameObject:
   m_ObjectHideFlags: 0
@@ -37806,7 +38043,7 @@ MonoBehaviour:
   runOnStart: 0
   sentences:
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: cc0c64a8b4ee57b43a4d8244ea07c999, type: 2}
       sentence: Naar welke planeet moeten wij de kannen schieten? De kannen zijn
         {gewicht}KG en moeten stabiel zijn wanneer deze {meter}m vallen. Vergeet
         niet dat er minimaal {min}J en maximaal {max}J vrij mag komen wanneer ze
@@ -37818,10 +38055,10 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
       sentence: Je kan op de planeten klikken om berekeningen in te vullen. Zorg
         wel dat je alles invult om zeker te weten welke planeet de juiste is!
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: a9c74114f5ab84b47896321fdbeedf81, type: 2}
       sentence: Als je denkt de juiste te hebben, kan je de kannen versturen. Daar
         ga ik mooi niets mee te maken hebben voor het geval het de verkeerde planeet
         was.
@@ -48324,6 +48561,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668084552}
   m_CullTransparentMesh: 1
+--- !u!1 &1678006524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 219202183978839295, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+  m_PrefabInstance: {fileID: 4809940738442177251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1678006529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678006524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6009297ef0864c4db6609f14869953f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentConvoIndex: 0
+  currentSentenceIndex: -1
+  sentenceSpeed: 0.09
+  active: 1
+  runOnStart: 0
+  sentences:
+  - sentences:
+    - characterOBJ: {fileID: 11400000, guid: 602f8b56926acf1448060ca1a2af68cb, type: 2}
+      sentence: Ik kan het zo repareren, maar zo te zien gaat het een uur kosten
+        voor de batterij weer voldoende stroom kan ontvangen. Met het percentage
+        wat de batterij nu nog over heeft gaat deze een uur zonder stroom niet overleven...
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
+      sentence: Als de stroom uitvalt, betekent dat dat we zuurstof verliezen. Mij
+        maakt het niet veel uit, maar ik denk dat jij zuurstof wel waardeert!
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
+      sentence: ...
+    - characterOBJ: {fileID: 11400000, guid: 7c3067099e116f84297068f1785687b8, type: 2}
+      sentence: Maar als we kiezen alle energie voor zuurstof te gebruiken, valt
+        de apparatuur uit wat er weer toe zal leiden dat we zonder eten zitten.
+    - characterOBJ: {fileID: 11400000, guid: a9c74114f5ab84b47896321fdbeedf81, type: 2}
+      sentence: Wederom niet mijn probleem maar-
+    - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
+      sentence: Het is duidelijk! Ik moet zorgen dat beide opties precies genoeg
+        energie ontvangen.
+    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
+      sentence: Op de batterij kan je zien hoeveel energie we nog over hebben, bij
+        de meterkast kan je zien hoeveel van deze energie nodig is voor zuurstof.
+    - characterOBJ: {fileID: 11400000, guid: a9c74114f5ab84b47896321fdbeedf81, type: 2}
+      sentence: Dus vogel jij uit hoeveel energie we nog over hebben om naar de rest
+        van het huis te sturen? Dan ga ik naar buiten!
+    - characterOBJ: {fileID: 11400000, guid: a9c74114f5ab84b47896321fdbeedf81, type: 2}
+      sentence: Je kan de hoeveelheden invoeren bij de meterkast en de hendel overhalen
+        wanneer je zeker weet dat er geen doden gaan vallen.
+    closeAfter: 1
+    runEvent: 0
+    keepNavClosed: 0
+    yourCustomEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  dm: {fileID: 0}
 --- !u!1 &1688273845
 GameObject:
   m_ObjectHideFlags: 0
@@ -65790,6 +66084,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1384747229}
     - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 598795497}
@@ -65797,6 +66099,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 919132147719657385}
+    - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1678006529}
+    - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetAndStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DialogTesting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4809940738689932336, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -65898,6 +66220,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 919132147719657385}
     - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 598795497}
@@ -65905,6 +66235,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 919132147719657385}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 495848125}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetAndStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DialogTesting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
 --- !u!222 &4809940738757262624

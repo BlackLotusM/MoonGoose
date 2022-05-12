@@ -54,6 +54,9 @@ public class Vraag3 : MonoBehaviour
 
     public int activeInt = 0;
 
+    public DialogTesting correct;
+    public DialogTesting incorrect;
+
     [Serializable]
     public class Collect
     {
@@ -253,11 +256,11 @@ public class Vraag3 : MonoBehaviour
     {
         if(value == 1)
         {
-            Debug.Log("goed");
+            correct.SetAndStart();
         }
         else
         {
-            Debug.Log("fout");
+            incorrect.SetAndStart();
         }
     }
 }
