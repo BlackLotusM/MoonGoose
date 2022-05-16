@@ -26,9 +26,16 @@ public class HoloActivate : MonoBehaviour
     public double meters;
     public double correcteAntwoord;
 
+    public bool opdrachtCheck;
+
     public CameraManager cam;
     public int wayPointIndex;
     private QuestionShow showQuestion;
+
+    public bool toetsActive;
+    public GameObject questLeer;
+    public GameObject questToets;
+    public GameObject parent;
 
     public void SetAcitve()
     {
@@ -178,12 +185,18 @@ public class HoloActivate : MonoBehaviour
 
         if (planets[num].isAnswer)
         {
+            opdrachtCheck = true;
             manager.currentDialog = correct;
             manager.startSentence();
+            if (!toetsActive)
+            {
+                questLeer.transform.parent = parent.transform;
+            }
             Debug.Log("Correct");
         }
         else
         {
+            opdrachtCheck = false;
             manager.currentDialog = inCorrect;
             manager.startSentence();
             Debug.Log("false");

@@ -35,6 +35,8 @@ public class Vraag3 : MonoBehaviour
     [SerializeField]
     private String[] sendersEnergie;
 
+    public bool opdrachtCheck;
+
 
 
     public Image targetImage;
@@ -56,6 +58,11 @@ public class Vraag3 : MonoBehaviour
 
     public DialogTesting correct;
     public DialogTesting incorrect;
+
+    public bool toetsActive;
+    public GameObject questLeer;
+    public GameObject questToets;
+    public GameObject parent;
 
     [Serializable]
     public class Collect
@@ -256,10 +263,16 @@ public class Vraag3 : MonoBehaviour
     {
         if(value == 1)
         {
+            opdrachtCheck = true;
             correct.SetAndStart();
+            if (!toetsActive)
+            {
+                questLeer.transform.parent = parent.transform;
+            }
         }
         else
         {
+            opdrachtCheck = false;
             incorrect.SetAndStart();
         }
     }

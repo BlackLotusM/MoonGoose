@@ -15,6 +15,13 @@ public class StroomManager : MonoBehaviour
     public DialogTesting correct;
     public DialogTesting incorrect;
 
+    public bool opdrachtCheck;
+
+    public bool toetsActive;
+    public GameObject questLeer;
+    public GameObject questToets;
+    public GameObject parent;
+
     private void Start()
     {
         GenerateQuestion();
@@ -64,8 +71,18 @@ public class StroomManager : MonoBehaviour
             temp += numberList[i];
         }
         if (correctAnswer == Convert.ToInt32(temp))
+        {
+            if (!toetsActive)
+            {
+                questLeer.transform.parent = parent.transform;
+            }
+            opdrachtCheck = true;
             correct.SetAndStart();
+        }
         else
+        {
             incorrect.SetAndStart();
+            opdrachtCheck = false;
+        }
     }
 }

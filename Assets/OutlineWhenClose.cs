@@ -5,6 +5,7 @@ using UnityEngine;
 public class OutlineWhenClose : MonoBehaviour
 {
     Outline outline;
+    public float distance = 2.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class OutlineWhenClose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(Camera.main.transform.position, this.transform.position) < 2.5f)
+        if(Vector3.Distance(Camera.main.transform.position, this.transform.position) < distance)
         {
             outline.enabled = true;
         }else if(outline.enabled == true)
