@@ -27,7 +27,6 @@ public class CameraManager : MonoBehaviour
 
     private void Start()
     {
-        mainCam = Camera.main;
         currentWaypoint = getWaypointDate(currentIndex);
         moveToIndex(currentIndex);
         setUIArrow();
@@ -44,7 +43,6 @@ public class CameraManager : MonoBehaviour
             btn_right.inActive = false;
         else
             btn_right.inActive = true;
-
 
         if (currentWaypoint.targets.up)
             btn_up.inActive = false;
@@ -137,7 +135,7 @@ public class CameraManager : MonoBehaviour
         Quaternion startingRotation = mainCam.transform.rotation;
         Quaternion finalRotation = camPos.rotation;
 
-        if (Vector3.Distance(startingPos, finalPos) < 0.1 && Quaternion.Angle(startingRotation, finalRotation) < 0.1)
+        if (startingPos == finalPos && startingRotation == finalRotation)
         {
             done = true;
             yield break;
@@ -153,6 +151,9 @@ public class CameraManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        startingPos = finalPos;
+        startingRotation = finalRotation;
         done = true;
         if(waypointPath.FirstOrDefault(x => x.waypointTransform == camPos) != null)
             currentIndex = waypointPath.FirstOrDefault(x => x.waypointTransform == camPos).index;

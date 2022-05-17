@@ -554,6 +554,7 @@ MonoBehaviour:
   lerpDuration: 0.25
   camMan: {fileID: 598795497}
   holoManager: {fileID: 0}
+  cam: {fileID: 1314059134}
 --- !u!135 &37429262
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -803,6 +804,7 @@ MonoBehaviour:
   lerpDuration: 0.25
   camMan: {fileID: 598795497}
   holoManager: {fileID: 0}
+  cam: {fileID: 1314059134}
 --- !u!135 &48424712
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6301,6 +6303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d9fc44a8ebc55438a72ccc33460d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1314059134}
 --- !u!114 &73767815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7209,6 +7212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 2.5
+  cam: {fileID: 1314059134}
 --- !u!23 &133160450
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9154,6 +9158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
+  cam: {fileID: 1314059134}
 --- !u!225 &236367704
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14435,7 +14440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 0
   precomputeOutline: 0
@@ -16334,6 +16339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d9fc44a8ebc55438a72ccc33460d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1314059134}
 --- !u!114 &584512780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23532,6 +23538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &731615561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25085,6 +25092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &803914952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25097,7 +25105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -25173,6 +25181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d9fc44a8ebc55438a72ccc33460d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1314059134}
 --- !u!114 &824837795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25571,6 +25580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
+  cam: {fileID: 1314059134}
 --- !u!225 &855433457
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -25905,6 +25915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d9fc44a8ebc55438a72ccc33460d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1314059134}
 --- !u!114 &905313675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27049,6 +27060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
+  cam: {fileID: 1314059134}
 --- !u!225 &961242024
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -27347,6 +27359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &970742189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27359,7 +27372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -28312,6 +28325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &1018444598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28324,7 +28338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -35600,6 +35614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
+  cam: {fileID: 1314059134}
 --- !u!225 &1094369338
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -35684,6 +35699,7 @@ MonoBehaviour:
   lerpDuration: 0.25
   camMan: {fileID: 598795497}
   holoManager: {fileID: 0}
+  cam: {fileID: 1314059134}
 --- !u!135 &1095882255
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -36652,6 +36668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &1187714708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36664,7 +36681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -39587,6 +39604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &1347264944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39599,7 +39617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -39677,6 +39695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d9fc44a8ebc55438a72ccc33460d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1314059134}
 --- !u!114 &1347595430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40651,6 +40670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &1389450219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40663,7 +40683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -41051,6 +41071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!114 &1424190610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41063,7 +41084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -43067,7 +43088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 0.60096395, g: 1, b: 0.3537736, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -43086,6 +43107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 4
+  cam: {fileID: 1314059134}
 --- !u!1 &1529324239
 GameObject:
   m_ObjectHideFlags: 0
@@ -50396,6 +50418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d9fc44a8ebc55438a72ccc33460d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1314059134}
 --- !u!114 &1580338800
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -55,6 +55,8 @@ public class Moveplanet : MonoBehaviour
 
     public HoloActivate holoManager;
 
+    public Camera cam;
+
     private void Start()
     {
         holoManager = FindObjectOfType<HoloActivate>();
@@ -87,8 +89,8 @@ public class Moveplanet : MonoBehaviour
     private void OnMouseDown()
     {
         QuestionCanvasState(true);
-        Camera.main.transform.position = targetCam.position;
-        Camera.main.transform.rotation = targetCam.rotation;
+        cam.transform.position = targetCam.position;
+        cam.transform.rotation = targetCam.rotation;
     }
 
     private void SetText()

@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
-    private Camera cam;
-    private void Start()
-    {
-        cam = Camera.main;
-    }
+    public Camera cam;
+
     // Update is called once per frame
     void Update()
     {

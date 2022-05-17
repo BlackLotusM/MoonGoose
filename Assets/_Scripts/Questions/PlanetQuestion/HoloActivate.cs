@@ -88,7 +88,7 @@ public class HoloActivate : MonoBehaviour
             if (particle.gameObject.transform.localScale.x < 1f)
             {
                 var vec = particle.gameObject.transform.localScale;
-                vec.x += 0.008f;
+                vec.x += 1.36f * Time.deltaTime;
                 vec.z = vec.x;
                 vec.y = vec.x;
                 particle.gameObject.transform.localScale = vec;
@@ -100,7 +100,7 @@ public class HoloActivate : MonoBehaviour
             if (particle.gameObject.transform.localScale.x > 0)
             {
                 var vec = particle.gameObject.transform.localScale;
-                vec.x -= 0.008f;
+                vec.x -= 1.36f * Time.deltaTime;
                 vec.z = vec.x;
                 vec.y = vec.x;
                 particle.gameObject.transform.localScale = vec;

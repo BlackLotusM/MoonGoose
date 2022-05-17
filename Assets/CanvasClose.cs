@@ -6,6 +6,7 @@ public class CanvasClose : MonoBehaviour
 {
     CanvasGroup group;
     public float range = 4f;
+    public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class CanvasClose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(Camera.main.transform.position, this.gameObject.transform.position) < range)
+        if(Vector3.Distance(cam.transform.position, this.gameObject.transform.position) < range)
         {
             if (group.alpha < 1)
             {
