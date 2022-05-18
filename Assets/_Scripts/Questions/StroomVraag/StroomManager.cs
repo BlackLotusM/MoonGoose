@@ -22,6 +22,13 @@ public class StroomManager : MonoBehaviour
     public GameObject questToets;
     public GameObject parent;
 
+    public bool active = false;
+
+    public void ActivateQuestion()
+    {
+        active = true;
+    }
+
     private void Start()
     {
         GenerateQuestion();
@@ -41,6 +48,8 @@ public class StroomManager : MonoBehaviour
 
     public void IncrementNumber(int numberPlace)
     {
+        if (!active)
+            return;
         numberList[numberPlace]++;
         if (numberList[numberPlace] > 9)
             numberList[numberPlace] = 0;
@@ -49,6 +58,8 @@ public class StroomManager : MonoBehaviour
 
     public void DecrementNumber(int numberPlace)
     {
+        if (!active)
+            return;
         numberList[numberPlace]--;
         if(numberList[numberPlace] < 0)
             numberList[numberPlace] = 9;
@@ -65,6 +76,8 @@ public class StroomManager : MonoBehaviour
     public string temp;
     public void LockIn()
     {
+        if (!active)
+            return;
         temp = "";
         for (int i = 0; i < numberList.Count; i++)
         {

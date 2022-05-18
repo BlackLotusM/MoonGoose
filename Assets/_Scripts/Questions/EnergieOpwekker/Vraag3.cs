@@ -64,6 +64,13 @@ public class Vraag3 : MonoBehaviour
     public GameObject questToets;
     public GameObject parent;
 
+    public bool active = false;
+
+    public void SetActive()
+    {
+        active = true;
+    }
+
     [Serializable]
     public class Collect
     {
@@ -91,10 +98,6 @@ public class Vraag3 : MonoBehaviour
     {
         targetImage.sprite = intPicState[activeInt].sprites[intPicState[activeInt].picState];
         uitlegTarget.sprite = intPicState[activeInt].uitleg;
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SetAnswer();
-        }
     }
 
     public IEnumerator updateNum()
@@ -253,6 +256,8 @@ public class Vraag3 : MonoBehaviour
 
     public void ChangeInxdex(int index)
     {
+        if (!active)
+            return;
         uitlegTarget.sprite = intPicState[index].uitleg;
         targetImage.gameObject.SetActive(true);
         uitlegTarget.gameObject.SetActive(true);
@@ -261,6 +266,8 @@ public class Vraag3 : MonoBehaviour
 
     public void CheckAnswer(int value)
     {
+        if (!active)
+            return;
         if(value == 1)
         {
             opdrachtCheck = true;

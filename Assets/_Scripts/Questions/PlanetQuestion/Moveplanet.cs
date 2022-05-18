@@ -57,6 +57,9 @@ public class Moveplanet : MonoBehaviour
 
     public Camera cam;
 
+    public GameObject navi;
+    public GameObject escape;
+
     private void Start()
     {
         holoManager = FindObjectOfType<HoloActivate>();
@@ -68,9 +71,19 @@ public class Moveplanet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            navi.SetActive(true);
+            escape.SetActive(false);
             camMan.moveToIndex(camMan.currentIndex);
             QuestionCanvasState(false);
         }
+    }
+
+    public void Escape()
+    {
+        navi.SetActive(true);
+        escape.SetActive(false);
+        camMan.moveToIndex(camMan.currentIndex);
+        QuestionCanvasState(false);
     }
 
     private void OnMouseEnter()
@@ -88,6 +101,8 @@ public class Moveplanet : MonoBehaviour
 
     private void OnMouseDown()
     {
+        navi.SetActive(false);
+        escape.SetActive(true);
         QuestionCanvasState(true);
         cam.transform.position = targetCam.position;
         cam.transform.rotation = targetCam.rotation;

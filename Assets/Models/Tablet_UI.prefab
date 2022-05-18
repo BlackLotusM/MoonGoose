@@ -244,7 +244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1141.9501}
+  m_AnchoredPosition: {x: 0, y: -287.7}
   m_SizeDelta: {x: 688.3, y: 256.7}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1775469547
@@ -634,7 +634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0004168834, y: 0.002136634}
+  m_AnchoredPosition: {x: -0.0004168834, y: -0.0018859787}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7930197515170632774
@@ -1057,11 +1057,23 @@ MonoBehaviour:
       sentence: Je kan de hoeveelheden invoeren bij de meterkast en de hendel overhalen
         wanneer je zeker weet dat er geen doden gaan vallen.
     closeAfter: 1
-    runEvent: 0
+    runEvent: 1
     keepNavClosed: 0
     yourCustomEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StroomManager, Assembly-CSharp
+          m_MethodName: ActivateQuestion
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   dm: {fileID: 0}
 --- !u!1 &497021918798990926
 GameObject:
@@ -6037,7 +6049,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6086,13 +6098,26 @@ MonoBehaviour:
   sentences:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
-      sentence: Zo te zien heeft Gaia de opties naar de grote monitor gestuurd.
-    closeAfter: 0
-    runEvent: 0
+      sentence: Zo te zien heeft Gaia de opties naar de grote monitor gestuurd. Als
+        je de monitor aanraakt kan je volgendsmij beginnen!
+    closeAfter: 1
+    runEvent: 1
     keepNavClosed: 0
     yourCustomEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: DialogOnMouseDown, Assembly-CSharp
+          m_MethodName: activateScreen
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   dm: {fileID: 0}
 --- !u!1 &3024804245462007090
 GameObject:
@@ -6586,7 +6611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3186835628728577886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6605,7 +6630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -857.2}
+  m_AnchoredPosition: {x: 0, y: -287.7}
   m_SizeDelta: {x: 688.3, y: 256.7}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3088004019524225799
@@ -9357,7 +9382,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 0, y: 20.11}
+  m_CellSize: {x: 927.3, y: 29.45}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -10777,7 +10802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4809940738467552117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11021,8 +11046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0006485254, y: 0.003602614}
-  m_SizeDelta: {x: 0, y: 1141.9501}
+  m_AnchoredPosition: {x: -0.0006485254, y: -0.0020525507}
+  m_SizeDelta: {x: 0, y: 287.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4809940738960566729
 MonoBehaviour:
@@ -11627,8 +11652,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4809940740146326906}
   m_HandleRect: {fileID: 4809940740146326907}
   m_Direction: 2
-  m_Value: 0.9999983
-  m_Size: 0.6283103
+  m_Value: 0
+  m_Size: 0.9999939
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12045,8 +12070,8 @@ RectTransform:
   m_Father: {fileID: 4809940740294872666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.37168902}
-  m_AnchorMax: {x: 1, y: 0.99999934}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.9999939}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13581,7 +13606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4794719566333246188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15692,7 +15717,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6837770560124221828}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999985
+  m_Size: 0.9999942
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28424,8 +28449,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8791724980580776498}
   m_HandleRect: {fileID: 6375611774049381093}
   m_Direction: 2
-  m_Value: 0.9999861
-  m_Size: 0.83022165
+  m_Value: 0.99995613
+  m_Size: 0.8196422
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
