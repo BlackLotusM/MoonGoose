@@ -198,7 +198,7 @@ public class Vraag3 : MonoBehaviour
                 //Checks what one to pic
                 if (waterSelected == 0)
                 {
-                    temp.uitleg = zonInfo[waterSelected];
+                    temp.uitleg = waterInfo[waterSelected];
                     txt_names[selected].text = namesWater[waterSelected];
                     txt_senders[selected].text = sendersWater[waterSelected];
                 }
@@ -240,7 +240,7 @@ public class Vraag3 : MonoBehaviour
                 }
                 else
                 {
-                    temp.uitleg = zonInfo[windSelected - 1];
+                    temp.uitleg = windInfo[windSelected - 1];
                     txt_names[selected].text = namesWind[windSelected - 1];
                     txt_senders[selected].text = sendersWind[windSelected - 1];
                 }
