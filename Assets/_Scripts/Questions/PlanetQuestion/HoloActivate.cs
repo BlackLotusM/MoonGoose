@@ -30,7 +30,7 @@ public class HoloActivate : MonoBehaviour
 
     public CameraManager cam;
     public int wayPointIndex;
-    private QuestionShow showQuestion;
+    public QuestionShow showQuestion;
 
     public bool toetsActive;
     public GameObject questLeer;
@@ -44,7 +44,6 @@ public class HoloActivate : MonoBehaviour
 
     private void Start()
     {
-        showQuestion = FindObjectOfType<QuestionShow>();
         manager = FindObjectOfType<DialogManager>();
         foreach (GameObject button in buttons)
         {
