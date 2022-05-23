@@ -22,6 +22,8 @@ public class DialogManager : MonoBehaviour
     public IEnumerator typer;
     public bool corIsRunning;
 
+    public bool keepNavDisable;
+
     //Disables when done
     public bool runOnStart;
 
@@ -61,7 +63,7 @@ public class DialogManager : MonoBehaviour
             }
             if (currentDialog.sentences[currentDialog.currentConvoIndex].closeAfter)
             {
-                if(!currentDialog.sentences[currentDialog.currentConvoIndex].keepNavClosed)
+                if(!currentDialog.sentences[currentDialog.currentConvoIndex].keepNavClosed && !keepNavDisable)
                     navigationUI.SetActive(true);
                 panel.SetActive(false);
                 currentDialog.currentSentenceIndex = -1;
@@ -85,7 +87,7 @@ public class DialogManager : MonoBehaviour
         {
             return;
         }
-
+        
         navigationUI.SetActive(false);
         panel.SetActive(true);
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotateCameraPivotAndCamera : MonoBehaviour
 {
     public GameObject firstPos;
+    public bool keepNavDisable;
     public GameObject navigationPanel;
     public void StartRotate()
     {
@@ -29,8 +30,8 @@ public class RotateCameraPivotAndCamera : MonoBehaviour
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, factor);
             yield return null;
         }
-
-        navigationPanel.SetActive(true);
+        if(!keepNavDisable)
+            navigationPanel.SetActive(true);
         // just to be sure to end up with clean values
         transform.rotation = targetRotation;
         firstPos.transform.rotation = targetRotation;

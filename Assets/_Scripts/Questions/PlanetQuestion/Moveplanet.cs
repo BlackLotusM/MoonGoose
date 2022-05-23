@@ -57,6 +57,7 @@ public class Moveplanet : MonoBehaviour
 
     public Camera cam;
 
+    public bool navDisabled;
     public GameObject navi;
     public GameObject escape;
 
@@ -71,7 +72,8 @@ public class Moveplanet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            navi.SetActive(true);
+            if(!navDisabled)
+                navi.SetActive(true);
             escape.SetActive(false);
             camMan.moveToIndex(camMan.currentIndex);
             QuestionCanvasState(false);
@@ -80,7 +82,8 @@ public class Moveplanet : MonoBehaviour
 
     public void Escape()
     {
-        navi.SetActive(true);
+        if (!navDisabled)
+            navi.SetActive(true);
         escape.SetActive(false);
         camMan.moveToIndex(camMan.currentIndex);
         QuestionCanvasState(false);
@@ -101,7 +104,8 @@ public class Moveplanet : MonoBehaviour
 
     private void OnMouseDown()
     {
-        navi.SetActive(false);
+        if (!navDisabled)
+            navi.SetActive(false);
         escape.SetActive(true);
         QuestionCanvasState(true);
         cam.transform.position = targetCam.position;

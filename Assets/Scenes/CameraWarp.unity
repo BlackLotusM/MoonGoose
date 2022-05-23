@@ -782,6 +782,7 @@ MonoBehaviour:
   camMan: {fileID: 598795497}
   holoManager: {fileID: 0}
   cam: {fileID: 1314059134}
+  navDisabled: 0
   navi: {fileID: 1268609641}
   escape: {fileID: 505463273}
 --- !u!135 &37429262
@@ -1034,6 +1035,7 @@ MonoBehaviour:
   camMan: {fileID: 598795497}
   holoManager: {fileID: 0}
   cam: {fileID: 1314059134}
+  navDisabled: 0
   navi: {fileID: 1268609641}
   escape: {fileID: 505463273}
 --- !u!135 &48424712
@@ -16637,20 +16639,20 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8443396, g: 0.8496463, b: 1, a: 1}
-  m_Intensity: 1.31
+  m_Color: {r: 0.5712887, g: 0.74365544, b: 0.9245283, a: 1}
+  m_Intensity: 0.33
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.417
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Strength: 0.909
+    m_Bias: 5.11
+    m_NormalBias: 0
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -16677,7 +16679,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -34167,6 +34169,7 @@ MonoBehaviour:
   camMan: {fileID: 598795497}
   holoManager: {fileID: 0}
   cam: {fileID: 1314059134}
+  navDisabled: 1
   navi: {fileID: 1268609641}
   escape: {fileID: 505463273}
 --- !u!135 &1095882255
@@ -40156,18 +40159,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1314059142}
-          m_TargetAssemblyTypeName: StartArrowTut, Assembly-CSharp
-          m_MethodName: StartBlink
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   dm: {fileID: 0}
 --- !u!114 &1314059141
 MonoBehaviour:
@@ -40182,6 +40173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstPos: {fileID: 1000542030}
+  keepNavDisable: 1
   navigationPanel: {fileID: 1268609641}
 --- !u!114 &1314059142
 MonoBehaviour:
@@ -57387,6 +57379,7 @@ MonoBehaviour:
   sentenceSpeed: 0.04
   panel: {fileID: 1921993520}
   corIsRunning: 0
+  keepNavDisable: 1
   runOnStart: 0
   currentDialog: {fileID: 0}
 --- !u!1 &1976394597
