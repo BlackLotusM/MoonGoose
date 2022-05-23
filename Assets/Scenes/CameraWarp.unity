@@ -13464,7 +13464,7 @@ MonoBehaviour:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: 'Ze komen thuis over drie dagen. '
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: a9c74114f5ab84b47896321fdbeedf81, type: 2}
       sentence: Dat moet wel goedkomen. De vuurtoren brand rustig door, dus ze kunnen
         gewoon deze ster naar huis volgen!
     closeAfter: 0
@@ -13480,7 +13480,7 @@ MonoBehaviour:
       sentence: '... '
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: N6 analyseer de schade.
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
       sentence: Analyse wordt uitgevoerd...
     closeAfter: 0
     runEvent: 1
@@ -13489,7 +13489,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
       sentence: Analyse compleet. Zo te zien zijn er enkele onderdelen losgeraakt
         van de vuurtoren. Ik heb de stappen voor herstel naar de tablet gestuurd.
     closeAfter: 1
@@ -40088,11 +40088,11 @@ MonoBehaviour:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: ...Driopoh, Taranis, Pluto -
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
       sentence: Neptaurus.
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: Wat?
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
       sentence: Na Taranis komt Neptaurus.
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: We zijn lichtjaren van aarde vandaan! Volgens pap hebben we nog leden
@@ -40101,29 +40101,29 @@ MonoBehaviour:
       sentence: Als aarde nog bestaat.
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: N6!!
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
       sentence: Grapje.
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
       sentence: ...
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
       sentence: Waarschijnlijk.
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: Er is geen reden dat aarde niet meer zou moeten bestaan.
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
       sentence: ...
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: Niet dat het uitmaakt. Alle belangrijke mensen zijn de ruimte in
         getrokken.
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: cc0c64a8b4ee57b43a4d8244ea07c999, type: 2}
       sentence: Over een paar van die belangrijke mensen gesproken. Wanneer zouden
         je ouders en legendarische Nash thuiskomen?
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: 'Ehm... Binnenkort. Ik ben de precieze datum even kwijt. '
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
       sentence: Het staat in de tablet, toch?
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
       sentence: Klopt, maar ik weet even niet waar-
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: a9c74114f5ab84b47896321fdbeedf81, type: 2}
       sentence: De tafel naast het raam. De tablet bevind zich bij de tafel naast
         het raam.
     closeAfter: 1
@@ -42361,16 +42361,16 @@ MonoBehaviour:
   runOnStart: 0
   sentences:
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
       sentence: '*explosion sound*'
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
       sentence: ...
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: 602f8b56926acf1448060ca1a2af68cb, type: 2}
       sentence: Is de Aries familie nog heel??!?
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: c9c5285cdd224284facbe32112e177e0, type: 2}
       sentence: Pheew de kan is ontploft voordat deze in de buurt kwam van de planeet
         of de familie!
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: cc0c64a8b4ee57b43a4d8244ea07c999, type: 2}
       sentence: We hebben nog wat kannen over, dus we kunnen het nog een keer proberen?
     closeAfter: 1
     runEvent: 0
@@ -42398,7 +42398,7 @@ MonoBehaviour:
   runOnStart: 0
   sentences:
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
+    - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
       sentence: Ik hoor niets exploderen...
     - characterOBJ: {fileID: 11400000, guid: ff9cc48d591e5b840a0327d2eb0104ed, type: 2}
       sentence: 'Hey naam leerling, Super bedankt! Zonder jou hadden we niet thuis

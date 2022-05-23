@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: johan
   m_EditorClassIdentifier: 
   characterName: Johan
-  profilePic: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  profilePic: {fileID: 21300000, guid: 3e20c7aa3a2722a40ad13ad153d02886, type: 3}
