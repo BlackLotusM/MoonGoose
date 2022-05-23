@@ -35904,7 +35904,9 @@ MonoBehaviour:
   sentence: {fileID: 1178111077}
   target: {fileID: 2123708167}
   dialogueDone: 0
-  defaultText: 'De vraag '
+  defaultText: De baterij heeft nog enkele capaciteit over en de oxygensupplier gebruikt
+    ook al een gedeelte. Hoeveel energie blijft erover voor de rest van het schip.
+    Vul dit in op de meterkast!
 --- !u!114 &1218164216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44435,7 +44437,8 @@ MonoBehaviour:
   sentence: {fileID: 796404958}
   target: {fileID: 2013071669}
   dialogueDone: 0
-  defaultText: De vraag 2
+  defaultText: Welke opwekker zou werken in de ruimte? Klik deze aan op het scherm
+    en verstuur hem!
 --- !u!114 &1451161468
 MonoBehaviour:
   m_ObjectHideFlags: 0
