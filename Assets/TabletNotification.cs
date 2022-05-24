@@ -12,6 +12,7 @@ public class TabletNotification : MonoBehaviour
     public float waitTime;
     private IEnumerator cor;
     bool running;
+    int i = 0;
 
     private void Update()
     {
@@ -27,6 +28,11 @@ public class TabletNotification : MonoBehaviour
     }
     public void BtnState(bool state)
     {
+        if(i == 0)
+        {
+            i++;
+            GetComponent<Animator>().SetTrigger("PlayAnim");
+        }
         
         if (state && !running)
         {

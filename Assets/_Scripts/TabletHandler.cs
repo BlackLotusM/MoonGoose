@@ -21,7 +21,7 @@ public class TabletHandler : MonoBehaviour
     {
         pickedUp = true;
         //TO-DO Start Tablet Interaction
-        canvasMap.SetActive(!canvasMap.activeSelf);
+        //canvasMap.SetActive(!canvasMap.activeSelf);
         //For now start dialogue after
         
     }

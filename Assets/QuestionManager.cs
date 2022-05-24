@@ -8,7 +8,8 @@ public class QuestionManager : MonoBehaviour
     public HoloActivate planetVraag;
     public StroomManager stroomVraag;
     public Vraag3 meerkeuzeVraag;
-
+    int i = 0;
+    public bool toetsActive;
     private void Start()
     {
         planetVraag = FindObjectOfType<HoloActivate>();
@@ -17,9 +18,17 @@ public class QuestionManager : MonoBehaviour
     }
     private void Update()
     {
-        if(planetVraag.opdrachtCheck && stroomVraag.opdrachtCheck && meerkeuzeVraag.opdrachtCheck)
+        if(planetVraag.opdrachtCheck && stroomVraag.opdrachtCheck && meerkeuzeVraag.opdrachtCheck && i == 0)
         {
+            i++;
             Debug.Log("Toets Active");
+            toetsActive = true;
         }
+    }
+
+    public void EndGame()
+    {
+        if(toetsActive)
+            FindObjectOfType<FadeToBlack>().StartCoroutine(FindObjectOfType<FadeToBlack>().FadeBlack(true, 2));
     }
 }

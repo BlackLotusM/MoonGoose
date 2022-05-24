@@ -10,6 +10,7 @@ public class DialogManager : MonoBehaviour
     public Image characterProfile;
     public TextMeshProUGUI txtDialogue;
     public GameObject navigationUI;
+    public PersonSO leerlingOBJ;
 
     public double meter;
     public double gewicht;
@@ -117,6 +118,7 @@ public class DialogManager : MonoBehaviour
         txtDialogue.text = "";
         characterProfile.sprite = sentence.characterOBJ.profilePic;
         characterName.text = sentence.characterOBJ.characterName;
+        sentence.sentence = sentence.sentence.Replace("{leerling}", leerlingOBJ.characterName);
         sentence.sentence = sentence.sentence.Replace("{gewicht}", gewicht.ToString());
         sentence.sentence = sentence.sentence.Replace("{meter}", meter.ToString());
         sentence.sentence = sentence.sentence.Replace("{min}", minJ.ToString());
