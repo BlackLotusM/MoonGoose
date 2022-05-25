@@ -30,7 +30,7 @@ public class HoloActivate : MonoBehaviour
 
     public CameraManager cam;
     public int wayPointIndex;
-    public QuestionShow showQuestion;
+    public GameObject showQuestion;
 
     public bool toetsActive;
     public GameObject questLeer;
@@ -63,7 +63,7 @@ public class HoloActivate : MonoBehaviour
             return;
         uitlegDialog.SetAndStart();
         manager.activateObject();
-        showQuestion.StateText(true);
+        //showQuestion.SetActive(true);
 
         foreach (Moveplanet planet in planets)
         {
@@ -79,7 +79,7 @@ public class HoloActivate : MonoBehaviour
                 if(planet.planetActive == true)
                     planet.updateState();
             }
-            showQuestion.StateText(false);
+            showQuestion.SetActive(false);
         }
 
         if (planets[0].planetActive)
