@@ -28,7 +28,6 @@ public class QuestionManager : MonoBehaviour
 
     public void EndGame()
     {
-        if(toetsActive)
-            FindObjectOfType<FadeToBlack>().StartCoroutine(FindObjectOfType<FadeToBlack>().FadeBlack(true, 2));
+        FindObjectOfType<FadeToBlack>().StartCoroutine(FindObjectOfType<FadeToBlack>().FadeBlack(true, 2));
     }
 }

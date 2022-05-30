@@ -12,6 +12,8 @@ public class StroomManager : MonoBehaviour
     public List<int> numberList = new List<int> { 0, 0, 0, 0 };
     public int correctAnswer = 1234;
 
+    public OpenQuestion helpBtn;
+
     public DialogTesting correct;
     public DialogTesting incorrect;
 
@@ -78,6 +80,7 @@ public class StroomManager : MonoBehaviour
     {
         if (!active)
             return;
+        helpBtn.CloseBtn(false);
         temp = "";
         for (int i = 0; i < numberList.Count; i++)
         {

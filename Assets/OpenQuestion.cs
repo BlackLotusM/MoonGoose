@@ -28,7 +28,7 @@ public class OpenQuestion : MonoBehaviour
         }
         else
         {
-            theBtn.SetActive(false);
+            ForceClose();
         }
     }
 
@@ -50,6 +50,16 @@ public class OpenQuestion : MonoBehaviour
 
     bool done = false;
     public float val;
+
+    public void CloseBtn(bool state)
+    {
+        done = false;
+        if (current != null)
+            StopCoroutine(current);
+        current = changeVal(state);
+        if (current != null)
+            StartCoroutine(current);
+    }
     public IEnumerator changeVal(bool state)
     {
         val = anim.GetFloat("Blend");
@@ -92,5 +102,4 @@ public class OpenQuestion : MonoBehaviour
         theBtn.gameObject.SetActive(false);
         vraag.SetActive(false);
     }
-
 }
