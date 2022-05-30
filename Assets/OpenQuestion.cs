@@ -9,6 +9,7 @@ public class OpenQuestion : MonoBehaviour
     IEnumerator current;
     public GameObject vraag;
     public bool active;
+    public GameObject theBtn;
 
     private void Start()
     {
@@ -18,6 +19,19 @@ public class OpenQuestion : MonoBehaviour
     {
         active = true;
     }
+
+    public void EnableBTN(bool state)
+    {
+        if (active)
+        {
+            theBtn.SetActive(state);
+        }
+        else
+        {
+            theBtn.SetActive(false);
+        }
+    }
+
     public void ChangeQuestion()
     {
 
@@ -34,11 +48,6 @@ public class OpenQuestion : MonoBehaviour
             StartCoroutine(current);
     }
 
-    public void SetActiveOBJ()
-    {
-        //if(active)
-
-    }
     bool done = false;
     public float val;
     public IEnumerator changeVal(bool state)
@@ -77,9 +86,10 @@ public class OpenQuestion : MonoBehaviour
     {
         if (current != null)
             StopCoroutine(current);
+        state = false;
         done = false;
         anim.SetFloat("Blend", 0);
-        this.gameObject.SetActive(false);
+        theBtn.gameObject.SetActive(false);
         vraag.SetActive(false);
     }
 
