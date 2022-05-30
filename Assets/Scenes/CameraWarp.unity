@@ -26820,7 +26820,7 @@ MonoBehaviour:
   - {fileID: 1183744468}
   numberList: 00000000000000000000000000000000
   correctAnswer: 1234
-  helpBtn: {fileID: 0}
+  helpBtn: {fileID: 269684902}
   correct: {fileID: 799535655}
   incorrect: {fileID: 799535654}
   opdrachtCheck: 0
@@ -76654,6 +76654,10 @@ PrefabInstance:
       propertyPath: sentences.Array.data[0].yourCustomEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 799535653}
+    - target: {fileID: 2122136453785827875, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 919132147719657385}
     - target: {fileID: 4688353364626128487, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -76826,6 +76830,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 505463273}
+    - target: {fileID: 5703993095141856539, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7131821282069957360, guid: 070b91d959560fb44bc3872715d098cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
