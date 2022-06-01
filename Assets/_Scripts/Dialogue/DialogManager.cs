@@ -45,53 +45,87 @@ public class DialogManager : MonoBehaviour
             startSentence();
     }
 
+    public void StopCor()
+    {
+        if (typer != null)
+        {
+            StopCoroutine(typer);
+            corIsRunning = false;
+        }
+    }
+
     public void startSentence()
     {
+        //Need to check somewhere if it was antwoord change
+        //Need to check where i can reset.
+
+        //Checked of dialog wel actief is zo niet return
         if (!currentDialog.active)
         {
             panel.SetActive(false);
             return;
         }
+
+        panel.SetActive(true);
+
+        //Als sentence klaar is dan kan je dit uitvoeren
         if (!corIsRunning)
+        {
             currentDialog.currentSentenceIndex++;
 
-        if (currentDialog.currentSentenceIndex == currentDialog.sentences[currentDialog.currentConvoIndex].sentences.Length && !corIsRunning)
-        {
-            if (currentDialog.sentences[currentDialog.currentConvoIndex].runEvent)
+            if (currentDialog.currentSentenceIndex == currentDialog.sentences[currentDialog.currentConvoIndex].sentences.Length)
             {
-                if(currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent != null)
-                    currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent.Invoke();
-            }
-            if (currentDialog.sentences[currentDialog.currentConvoIndex].closeAfter)
-            {
-                if(!currentDialog.sentences[currentDialog.currentConvoIndex].keepNavClosed && !keepNavDisable)
-                    navigationUI.SetActive(true);
-                panel.SetActive(false);
-                currentDialog.currentSentenceIndex = -1;
-            }
-            else
-            {
-                currentDialog.currentSentenceIndex = 0;
-            }
+                if (currentDialog.sentences[currentDialog.currentConvoIndex].closeAfter)
+                {
+                    panel.SetActive(false);
+                    if (currentDialog.sentences[currentDialog.currentConvoIndex].runEvent)
+                    {
+                        if (currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent != null)
+                            currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent.Invoke();
+                    }
 
-            currentDialog.currentConvoIndex++;
+                    currentDialog.currentSentenceIndex = -1;
+                    currentDialog.currentConvoIndex++;
+                    if (currentDialog.currentConvoIndex == currentDialog.sentences.Length)
+                    {
+                        currentDialog.active = false;
+                    }
+                    return;
+                }
+                else
+                {
+                    //Resets for if there are more than 1 block of lines
+                    currentDialog.currentSentenceIndex = 0;
+                }
+
+                //Increases convo index
+                currentDialog.currentConvoIndex++;
+
+                if (currentDialog.currentConvoIndex == currentDialog.sentences.Length - 1 && currentDialog.currentSentenceIndex == currentDialog.sentences[currentDialog.currentConvoIndex].sentences.Length - 1 && currentDialog.resetAfter)
+                {
+                    currentDialog.active = true;
+                    currentDialog.currentConvoIndex = 0;
+                    currentDialog.currentSentenceIndex = -1;
+                }
+
+                if (currentDialog.currentConvoIndex == currentDialog.sentences.Length)
+                {
+                        currentDialog.active = false;
+                }
+
+                if (currentDialog.sentences[currentDialog.currentConvoIndex - 1].closeAfter)
+                {
+                    return;
+                }
+            }
 
             if (currentDialog.currentConvoIndex == currentDialog.sentences.Length)
-                currentDialog.active = false;
-            if (currentDialog.sentences[currentDialog.currentConvoIndex - 1].closeAfter)
             {
                 return;
             }
         }
 
-        if (!corIsRunning && currentDialog.currentConvoIndex == currentDialog.sentences.Length)
-        {
-            return;
-        }
-        
-        navigationUI.SetActive(false);
-        panel.SetActive(true);
-
+        //Checks if you can skip or should start new sentence
         Dialogue[] currentSentence = currentDialog.sentences[currentDialog.currentConvoIndex].sentences;
         if (!corIsRunning)
         {
@@ -115,6 +149,7 @@ public class DialogManager : MonoBehaviour
     }
     public IEnumerator typeSentence(Dialogue sentence)
     {
+        corIsRunning = true;
         txtDialogue.text = "";
         characterProfile.sprite = sentence.characterOBJ.profilePic;
         characterName.text = sentence.characterOBJ.characterName;
@@ -123,7 +158,7 @@ public class DialogManager : MonoBehaviour
         sentence.sentence = sentence.sentence.Replace("{meter}", meter.ToString());
         sentence.sentence = sentence.sentence.Replace("{min}", minJ.ToString());
         sentence.sentence = sentence.sentence.Replace("{max}", maxJ.ToString());
-        corIsRunning = true;
+        
         foreach (char c in sentence.sentence)
         {
             txtDialogue.text += c;
@@ -131,6 +166,8 @@ public class DialogManager : MonoBehaviour
         }
         corIsRunning = false;
         if (currentDialog.currentConvoIndex == currentDialog.sentences.Length - 1 && currentDialog.currentSentenceIndex == currentDialog.sentences[currentDialog.currentConvoIndex].sentences.Length - 1)
+        {
             currentDialog.active = false;
+        }
     }
 }

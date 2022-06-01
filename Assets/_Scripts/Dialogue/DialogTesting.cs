@@ -13,6 +13,7 @@ public class DialogTesting : MonoBehaviour
     //Disables when done
     public bool active = true;
     public bool runOnStart;
+    public bool resetAfter = false;
 
     public DialogueManager[] sentences;
     public DialogManager dm;
