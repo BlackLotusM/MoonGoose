@@ -9798,7 +9798,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 218606075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 789665407}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1436902438}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1574159000}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &218606075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14384,6 +14420,7 @@ MonoBehaviour:
   sentenceSpeed: 0.09
   active: 1
   runOnStart: 0
+  resetAfter: 0
   sentences:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
@@ -17816,7 +17853,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 582972395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 789665407}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436902438}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1574159000}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &582972395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25278,8 +25351,9 @@ MonoBehaviour:
   intPicState: []
   waitTime: 1
   activeInt: 0
-  correct: {fileID: 731615562}
-  incorrect: {fileID: 731615561}
+  answer: {fileID: 731615562}
+  answerRedo: {fileID: 731615561}
+  atempt: 0
   toetsActive: 0
   questLeer: {fileID: 2136486958}
   questToets: {fileID: 0}
@@ -25325,16 +25399,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentConvoIndex: 0
   currentSentenceIndex: -1
-  sentenceSpeed: 0.09
+  sentenceSpeed: 0.04
   active: 1
   runOnStart: 0
+  resetAfter: 1
   sentences:
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: 7c3067099e116f84297068f1785687b8, type: 2}
-      sentence: Oef, ik denk dat we maar beter niet voor deze optie kunnen gaan...
-    - characterOBJ: {fileID: 11400000, guid: 602f8b56926acf1448060ca1a2af68cb, type: 2}
-      sentence: Ik zal snel onze reactie naar Gaia verwijderen! Laten we opnieuw
-        kijken naar de opties!
+    - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
+      sentence: Je antwoord is aangepast!
     closeAfter: 1
     runEvent: 0
     keepNavClosed: 0
@@ -25356,20 +25428,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentConvoIndex: 0
   currentSentenceIndex: -1
-  sentenceSpeed: 0.09
+  sentenceSpeed: 0.04
   active: 1
   runOnStart: 0
+  resetAfter: 0
   sentences:
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: 01156b373733ea849bf67017d08374f5, type: 2}
-      sentence: Dat ziet er goed uit! We hebben geen wind in de ruimte dus die optie
-        had niet gewerkt en we kunnen natuurlijk ook niet met zekerheid zeggen dat
-        water zich juist gedraagd met de nieuwe ruimte eigenschappen. De zon kunnen
-        vanaf hier goed benaderen!
-    - characterOBJ: {fileID: 11400000, guid: 4aa56379ecdf0fa4789a1ab12a8054d7, type: 2}
-      sentence: Super, {leerling}. Ik wist dat ik op je kon rekenen! Dankzij je snelle
-        reactie kunnen we de opwekker zelfs ophalen zonder om te moeten reizen! Tot
-        snel <3
+    - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
+      sentence: Alright je antwoord hebben we verstuurd!
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
+      sentence: Oh en {leerling}, je kan je antwoord ook gewoon nog aanpassen mocht
+        dit nodig zijn. Als je op de tablet klikt kan je bij feedback je vragen terug
+        vinden!
     closeAfter: 1
     runEvent: 1
     keepNavClosed: 0
@@ -26821,13 +26891,14 @@ MonoBehaviour:
   numberList: 00000000000000000000000000000000
   correctAnswer: 1234
   helpBtn: {fileID: 269684902}
-  correct: {fileID: 799535655}
-  incorrect: {fileID: 799535654}
+  answer: {fileID: 799535655}
+  changedAnswer: {fileID: 799535654}
   opdrachtCheck: 0
   toetsActive: 0
   questLeer: {fileID: 1566210930}
   questToets: {fileID: 0}
   parent: {fileID: 2126789936}
+  atempt: 0
   active: 0
   temp: 
 --- !u!114 &799535654
@@ -26844,13 +26915,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentConvoIndex: 0
   currentSentenceIndex: -1
-  sentenceSpeed: 0.09
+  sentenceSpeed: 0.04
   active: 1
   runOnStart: 0
+  resetAfter: 1
   sentences:
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: b54c02af61b1b1049ad0b912740eb535, type: 2}
-      sentence: Ik wist niet dat ik zo slecht gezelschap was.
+    - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
+      sentence: Je antwoord is aangepast!
     closeAfter: 1
     runEvent: 0
     keepNavClosed: 0
@@ -26872,21 +26944,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentConvoIndex: 0
   currentSentenceIndex: -1
-  sentenceSpeed: 0.09
+  sentenceSpeed: 0.04
   active: 1
   runOnStart: 0
+  resetAfter: 0
   sentences:
   - sentences:
-    - characterOBJ: {fileID: 11400000, guid: 92d2b0952b6c11a48a113babffd72c8d, type: 2}
-      sentence: De kabel is gerepareerd! Hoe gaat het hier?
-    - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
-      sentence: ...
-    - characterOBJ: {fileID: 11400000, guid: 602f8b56926acf1448060ca1a2af68cb, type: 2}
-      sentence: Interessante keuze... Heb je toevallig een zuurstofmasker in de buurt?
+    - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
+      sentence: Alright je antwoord hebben we verstuurd!
     - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
-      sentence: Grapje, grapje, it should be fine!
-    - characterOBJ: {fileID: 11400000, guid: da19e2584136ed44599c1899799b4207, type: 2}
-      sentence: Wat zijn we toch een geweldig team!
+      sentence: Oh en {leerling}, je kan je antwoord ook gewoon nog aanpassen mocht
+        dit nodig zijn. Als je op de tablet klikt kan je bij feedback je vragen terug
+        vinden!
     closeAfter: 1
     runEvent: 1
     keepNavClosed: 0
@@ -36301,7 +36370,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1085035350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 789665407}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436902438}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1574159000}
+        m_TargetAssemblyTypeName: StateHandler, Assembly-CSharp
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1085035350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42895,6 +43000,7 @@ MonoBehaviour:
   sentenceSpeed: 0.04
   active: 1
   runOnStart: 1
+  resetAfter: 0
   sentences:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: 6430942c13f17bc4d8d29f7f8d66d605, type: 2}
@@ -45211,8 +45317,9 @@ MonoBehaviour:
   particle: {fileID: 1548028669}
   particle2: {fileID: 60104262}
   activeButton: -1
-  correct: {fileID: 1384747231}
-  inCorrect: {fileID: 1384747230}
+  antwoord: {fileID: 1384747231}
+  antwoordChange: {fileID: 1384747230}
+  changes: 0
   manager: {fileID: 0}
   buttons:
   - {fileID: 1233475070}
@@ -45247,19 +45354,11 @@ MonoBehaviour:
   sentenceSpeed: 0.04
   active: 1
   runOnStart: 0
+  resetAfter: 1
   sentences:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
-      sentence: '*explosion sound*'
-    - characterOBJ: {fileID: 11400000, guid: ba603317e7b56bc43982bc02c293b105, type: 2}
-      sentence: ...
-    - characterOBJ: {fileID: 11400000, guid: 602f8b56926acf1448060ca1a2af68cb, type: 2}
-      sentence: Is de Aries familie nog heel??!?
-    - characterOBJ: {fileID: 11400000, guid: c9c5285cdd224284facbe32112e177e0, type: 2}
-      sentence: Pheew de kan is ontploft voordat deze in de buurt kwam van de planeet
-        of de familie!
-    - characterOBJ: {fileID: 11400000, guid: cc0c64a8b4ee57b43a4d8244ea07c999, type: 2}
-      sentence: We hebben nog wat kannen over, dus we kunnen het nog een keer proberen?
+      sentence: Je antwoord is aangepast!
     closeAfter: 1
     runEvent: 0
     keepNavClosed: 0
@@ -45284,16 +45383,15 @@ MonoBehaviour:
   sentenceSpeed: 0.04
   active: 1
   runOnStart: 0
+  resetAfter: 0
   sentences:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: efed1d152b6ef384282831c492d96341, type: 2}
-      sentence: Ik hoor niets exploderen...
-    - characterOBJ: {fileID: 11400000, guid: ff9cc48d591e5b840a0327d2eb0104ed, type: 2}
-      sentence: 'Hey {leerling}, Super bedankt! Zonder jou hadden we niet thuis kunnen
-        komen! We hoorde dat je problemen hebt met de vuurtoren. '
-    - characterOBJ: {fileID: 11400000, guid: ff9cc48d591e5b840a0327d2eb0104ed, type: 2}
-      sentence: We sturen iets wat jou waarschijnlijk kan helpen als bedankje.  
-        Groetjes aan je ouders en broertje (en dat pratende blik).
+      sentence: Alright je antwoord hebben we verstuurd!
+    - characterOBJ: {fileID: 11400000, guid: d71365b12c8bdc74182a654349407063, type: 2}
+      sentence: Oh en {leerling}, je kan je antwoord ook gewoon nog aanpassen mocht
+        dit nodig zijn. Als je op de tablet klikt kan je bij feedback je vragen terug
+        vinden!
     closeAfter: 1
     runEvent: 1
     keepNavClosed: 0
@@ -45318,6 +45416,7 @@ MonoBehaviour:
   sentenceSpeed: 0.04
   active: 1
   runOnStart: 0
+  resetAfter: 0
   sentences:
   - sentences:
     - characterOBJ: {fileID: 11400000, guid: cc0c64a8b4ee57b43a4d8244ea07c999, type: 2}
@@ -47738,7 +47837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503245099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.726, y: 0.839, z: 0.643}
+  m_LocalPosition: {x: -1.381, y: 0.839, z: 0.461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1584824361}
