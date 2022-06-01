@@ -14,8 +14,8 @@ public class StroomManager : MonoBehaviour
 
     public OpenQuestion helpBtn;
 
-    public DialogTesting correct;
-    public DialogTesting incorrect;
+    public DialogTesting answer;
+    public DialogTesting changedAnswer;
 
     public bool opdrachtCheck;
 
@@ -23,6 +23,7 @@ public class StroomManager : MonoBehaviour
     public GameObject questLeer;
     public GameObject questToets;
     public GameObject parent;
+    public int atempt = 0;
 
     public bool active = false;
 
@@ -80,25 +81,42 @@ public class StroomManager : MonoBehaviour
     {
         if (!active)
             return;
-        helpBtn.CloseBtn(false);
-        temp = "";
-        for (int i = 0; i < numberList.Count; i++)
+        atempt++;
+
+        questLeer.transform.parent = parent.transform;
+        changedAnswer.dm.StopCor();
+        if (atempt == 1)
         {
-            temp += numberList[i];
-        }
-        if (correctAnswer == Convert.ToInt32(temp))
-        {
-            if (!toetsActive)
-            {
-                questLeer.transform.parent = parent.transform;
-            }
             opdrachtCheck = true;
-            correct.SetAndStart();
+            answer.SetAndStart();
         }
         else
         {
-            incorrect.SetAndStart();
+            changedAnswer.dm.panel.SetActive(false);
+            changedAnswer.currentConvoIndex = 0;
+            changedAnswer.currentSentenceIndex = -1;
+            changedAnswer.active = true;
+            changedAnswer.SetAndStart();
             opdrachtCheck = false;
         }
+
+        //helpBtn.CloseBtn(false);
+        //temp = "";
+        //for (int i = 0; i < numberList.Count; i++)
+        //{
+        //    temp += numberList[i];
+        //}
+        //if (correctAnswer == Convert.ToInt32(temp))
+        //{
+        //    if (!toetsActive)
+        //    {
+                
+        //    }
+            
+        //}
+        //else
+        //{
+            
+        //}
     }
 }

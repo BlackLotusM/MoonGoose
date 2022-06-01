@@ -56,8 +56,9 @@ public class Vraag3 : MonoBehaviour
 
     public int activeInt = 0;
 
-    public DialogTesting correct;
-    public DialogTesting incorrect;
+    public DialogTesting answer;
+    public DialogTesting answerRedo;
+    public int atempt = 0;
 
     public bool toetsActive;
     public GameObject questLeer;
@@ -258,6 +259,7 @@ public class Vraag3 : MonoBehaviour
     {
         if (!active)
             return;
+
         uitlegTarget.sprite = intPicState[index].uitleg;
         targetImage.gameObject.SetActive(true);
         uitlegTarget.gameObject.SetActive(true);
@@ -268,19 +270,24 @@ public class Vraag3 : MonoBehaviour
     {
         if (!active)
             return;
-        if(value == 1)
+
+        atempt++;
+        questLeer.transform.parent = parent.transform;
+        answer.dm.StopCor();
+
+        if (atempt == 1)
         {
             opdrachtCheck = true;
-            correct.SetAndStart();
-            if (!toetsActive)
-            {
-                questLeer.transform.parent = parent.transform;
-            }
+            answer.SetAndStart();
         }
         else
         {
+            answerRedo.dm.panel.SetActive(false);
             opdrachtCheck = false;
-            incorrect.SetAndStart();
+            answerRedo.currentConvoIndex = 0;
+            answerRedo.currentSentenceIndex = -1;
+            answerRedo.active = true;
+            answerRedo.SetAndStart();
         }
     }
 }

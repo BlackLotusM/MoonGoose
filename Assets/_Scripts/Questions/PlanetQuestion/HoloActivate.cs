@@ -15,8 +15,11 @@ public class HoloActivate : MonoBehaviour
     public ParticleSystem particle2;
     
     public int activeButton = -1;
-    public DialogTesting correct;
-    public DialogTesting inCorrect;
+
+    public DialogTesting antwoord;
+    public DialogTesting antwoordChange;
+    public int changes = 0;
+
     public DialogManager manager;
     public GameObject[] buttons;
 
@@ -180,25 +183,25 @@ public class HoloActivate : MonoBehaviour
 
     public void ChooseButton(int num)
     {
-        activeButton = num;
+        changes++;
 
-        if (planets[num].isAnswer)
+        activeButton = num;
+        questLeer.transform.parent = parent.transform;
+        manager.StopCor();
+
+        if (changes == 1)
         {
             opdrachtCheck = true;
-            manager.currentDialog = correct;
-            manager.startSentence();
-            if (!toetsActive)
-            {
-                questLeer.transform.parent = parent.transform;
-            }
-            Debug.Log("Correct");
+            antwoord.SetAndStart();
         }
         else
         {
+            manager.panel.SetActive(false);
             opdrachtCheck = false;
-            manager.currentDialog = inCorrect;
-            manager.startSentence();
-            Debug.Log("false");
+            antwoordChange.currentConvoIndex = 0;
+            antwoordChange.currentSentenceIndex = -1;
+            antwoordChange.active = true;
+            antwoordChange.SetAndStart();
         }
     }
 }
