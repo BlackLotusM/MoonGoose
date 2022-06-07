@@ -18,12 +18,16 @@ public class DialogManager : MonoBehaviour
     public double maxJ;
 
     public float sentenceSpeed = 0.09f;
+    public int soundPop = 2;
     public GameObject panel;
 
     public IEnumerator typer;
     public bool corIsRunning;
 
     public bool keepNavDisable;
+
+    public AudioSource source;
+    public AudioClip[] clips;
 
     //Disables when done
     public bool runOnStart;
@@ -60,9 +64,12 @@ public class DialogManager : MonoBehaviour
         //Need to check where i can reset.
 
         //Checked of dialog wel actief is zo niet return
-        if (!currentDialog.active)
+        if (!currentDialog.active && !currentDialog.done)
         {
             panel.SetActive(false);
+            if (currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent != null)
+                currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent.Invoke();
+            currentDialog.done = true;
             return;
         }
 
@@ -81,7 +88,9 @@ public class DialogManager : MonoBehaviour
                     if (currentDialog.sentences[currentDialog.currentConvoIndex].runEvent)
                     {
                         if (currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent != null)
+                        {
                             currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent.Invoke();
+                        }
                     }
 
                     currentDialog.currentSentenceIndex = -1;
@@ -94,6 +103,11 @@ public class DialogManager : MonoBehaviour
                 }
                 else
                 {
+                    if (currentDialog.sentences[currentDialog.currentConvoIndex].runEvent)
+                    {
+                        if (currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent != null)
+                            currentDialog.sentences[currentDialog.currentConvoIndex].yourCustomEvent.Invoke();
+                    }
                     //Resets for if there are more than 1 block of lines
                     currentDialog.currentSentenceIndex = 0;
                 }
@@ -147,8 +161,15 @@ public class DialogManager : MonoBehaviour
             txtDialogue.text = sentence;
         }
     }
+    int temp;
     public IEnumerator typeSentence(Dialogue sentence)
     {
+        if(currentDialog.currentSentenceIndex == 0)
+        {
+            panel.SetActive(false);
+            yield return new WaitForSeconds(currentDialog.sentences[currentDialog.currentConvoIndex].waitTime);
+        }
+        panel.SetActive(true);
         corIsRunning = true;
         txtDialogue.text = "";
         characterProfile.sprite = sentence.characterOBJ.profilePic;
@@ -158,10 +179,18 @@ public class DialogManager : MonoBehaviour
         sentence.sentence = sentence.sentence.Replace("{meter}", meter.ToString());
         sentence.sentence = sentence.sentence.Replace("{min}", minJ.ToString());
         sentence.sentence = sentence.sentence.Replace("{max}", maxJ.ToString());
+
         
         foreach (char c in sentence.sentence)
         {
+            temp++;
             txtDialogue.text += c;
+            if (temp == soundPop)
+            {
+                source.pitch = Random.Range(0.92f, 1.1f);
+                source.PlayOneShot(clips[Random.Range(0, clips.Length)]);
+                temp = 0;
+            }
             yield return new WaitForSeconds(sentenceSpeed);
         }
         corIsRunning = false;

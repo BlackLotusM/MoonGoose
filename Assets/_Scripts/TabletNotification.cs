@@ -13,19 +13,8 @@ public class TabletNotification : MonoBehaviour
     private IEnumerator cor;
     bool running;
     int i = 0;
+    public AudioSource source;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            BtnState(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            BtnState(false);
-        }
-    }
     public void BtnState(bool state)
     {
         if(i == 0)
@@ -50,6 +39,7 @@ public class TabletNotification : MonoBehaviour
 
     private IEnumerator BlinkButton()
     {
+        source.Play();
         while (running)
         {
             yield return new WaitForSeconds(waitTime);

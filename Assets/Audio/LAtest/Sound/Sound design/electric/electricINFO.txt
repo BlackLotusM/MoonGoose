@@ -1,0 +1,2 @@
+electric_succeded1 is erg lang, kan langer met electric succeded1loop(after)
+electric_succeded1(fade-out) is korter (want fade-out aan het einde)

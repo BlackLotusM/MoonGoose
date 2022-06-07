@@ -15,5 +15,6 @@ public class DialogueManager
     public bool closeAfter;
     public bool runEvent = false;
     public bool keepNavClosed = false;
+    public float waitTime = 0;
     public UnityEvent yourCustomEvent;
 }

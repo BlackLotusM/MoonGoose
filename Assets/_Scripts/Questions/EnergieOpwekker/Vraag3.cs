@@ -37,14 +37,15 @@ public class Vraag3 : MonoBehaviour
 
     public bool opdrachtCheck;
 
-
-
     public Image targetImage;
     public Image uitlegTarget;
     public int correctBtn;
 
     public Button[] btn;
     public Button[] sendBtn;
+
+    public AudioSource send;
+    public AudioSource select;
 
     //used for randomize
     private List<int> intList;
@@ -259,7 +260,7 @@ public class Vraag3 : MonoBehaviour
     {
         if (!active)
             return;
-
+        select.PlayOneShot(select.clip);
         uitlegTarget.sprite = intPicState[index].uitleg;
         targetImage.gameObject.SetActive(true);
         uitlegTarget.gameObject.SetActive(true);
@@ -270,7 +271,7 @@ public class Vraag3 : MonoBehaviour
     {
         if (!active)
             return;
-
+        send.PlayOneShot(send.clip);
         atempt++;
         questLeer.transform.parent = parent.transform;
         answer.dm.StopCor();

@@ -1,0 +1,4 @@
+volgorde: 1-2-3
+Elk kan aan einde van vorige loop geplakt worden als overgang
+1 kan zo lang geloopt worden als nodig
+3 kan zo lang geloopt worden als nodig

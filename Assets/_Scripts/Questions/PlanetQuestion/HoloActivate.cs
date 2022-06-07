@@ -40,6 +40,13 @@ public class HoloActivate : MonoBehaviour
     public GameObject questToets;
     public GameObject parent;
 
+    [Header("AudioStuf")]
+    public AudioSource source;
+    public AudioClip open;
+    public AudioClip loop;
+    public AudioClip close;
+
+    public AudioSource choose;
     public void SetAcitve()
     {
         isActive = true;
@@ -64,6 +71,7 @@ public class HoloActivate : MonoBehaviour
     {
         if (!isActive || !enableClick)
             return;
+        choose.PlayOneShot(choose.clip);
         uitlegDialog.SetAndStart();
         manager.activateObject();
         //showQuestion.SetActive(true);
@@ -72,15 +80,31 @@ public class HoloActivate : MonoBehaviour
         {
             planet.updateState();
         }
+
+        if (planets[1].planetActive)
+        {
+            source.clip = open;
+            source.Play();
+        }
+        else
+        {
+            source.clip = close;
+            source.Play();
+        }
     }
     private void Update()
     {
-        if(cam.currentIndex != wayPointIndex)
+        if (cam.currentIndex != wayPointIndex)
         {
             foreach (Moveplanet planet in planets)
             {
-                if(planet.planetActive == true)
+                if (planet.planetActive == true)
                     planet.updateState();
+                if (source.clip == open || source.clip == loop)
+                {
+                    source.clip = close;
+                    source.Play();
+                }
             }
             showQuestion.SetActive(false);
         }
@@ -95,6 +119,12 @@ public class HoloActivate : MonoBehaviour
                 vec.y = vec.x;
                 particle.gameObject.transform.localScale = vec;
                 particle2.gameObject.transform.localScale = vec;
+            }
+
+            if (!source.isPlaying)
+            {
+                source.clip = loop;
+                source.Play();
             }
         }
         else

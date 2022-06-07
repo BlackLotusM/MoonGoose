@@ -24,7 +24,8 @@ public class StroomManager : MonoBehaviour
     public GameObject questToets;
     public GameObject parent;
     public int atempt = 0;
-
+    public AudioSource audio;
+    public AudioSource click;
     public bool active = false;
 
     public void ActivateQuestion()
@@ -71,6 +72,8 @@ public class StroomManager : MonoBehaviour
 
     private void UpdateUI()
     {
+        if(active)
+            click.Play();
         for (int i = 0; i < textNumber.Length; i++)
         {
             textNumber[i].text = numberList[i].ToString();
@@ -82,7 +85,7 @@ public class StroomManager : MonoBehaviour
         if (!active)
             return;
         atempt++;
-
+        audio.Play();
         questLeer.transform.parent = parent.transform;
         changedAnswer.dm.StopCor();
         if (atempt == 1)

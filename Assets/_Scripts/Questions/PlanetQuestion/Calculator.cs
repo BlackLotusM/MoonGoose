@@ -14,14 +14,17 @@ public class Calculator : MonoBehaviour
     public TMP_InputField inputField;
     public TMP_InputField answerField;
     public Moveplanet planet;
+    public AudioSource source;
 
     public void Done()
     {
+        source.PlayOneShot(source.clip);
         planet.Done("Jou antwoord" + answerField.text);
     }
 
     public void AddCharacter(string character)
     {
+        source.PlayOneShot(source.clip);
         math += character;
         inputField.text = math;
         answerField.text = "= " + Evaluate(math);

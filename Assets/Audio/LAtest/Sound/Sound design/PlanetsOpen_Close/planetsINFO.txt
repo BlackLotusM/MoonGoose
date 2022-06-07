@@ -1,0 +1,2 @@
+2loop kan na 1open als 1open niet lang genoeg is
+3close kan alleen aan het einde van 1open of 2close. dus fadeout zou beter werken

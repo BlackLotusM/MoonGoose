@@ -1,0 +1,3 @@
+omdat de wav zo kort is kon hij de lengte van 1 geen eens meer renderen
+1 is dus zo kort als mogelijk met helft geluid helft niks
+2 is zo kort mogelijk gerenderd met voledig geluid
