@@ -17,6 +17,10 @@ public class MainMenu : MonoBehaviour
     public bool chosen = false;
     public Sprite current;
     public TextMeshProUGUI notAllfield;
+    public Image sourceStella;
+    public Image sourceDad;
+    public Sprite stellaChoose;
+    public Sprite dadChoose;
     public void ExitApp()
     {
         Application.Quit();
@@ -27,6 +31,8 @@ public class MainMenu : MonoBehaviour
         chosen = true;
         stella.SetActive(true);
         dad.SetActive(false);
+        sourceDad.sprite = dadSprite;
+        sourceStella.sprite = stellaChoose;
         current = stellaSprite;
     }
 
@@ -35,6 +41,8 @@ public class MainMenu : MonoBehaviour
         chosen = true;
         stella.SetActive(false);
         dad.SetActive(true);
+        sourceDad.sprite = dadChoose;
+        sourceStella.sprite = stellaSprite;
         current = dadSprite;
     }
 

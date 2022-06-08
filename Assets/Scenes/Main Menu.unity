@@ -7906,7 +7906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16634950dcadd974eb7a6bc63773b08e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 623fb0100977ab547824cac2d924a2ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8113,6 +8113,10 @@ MonoBehaviour:
   chosen: 0
   current: {fileID: 0}
   notAllfield: {fileID: 1028503318}
+  sourceStella: {fileID: 1397700513}
+  sourceDad: {fileID: 1313492679}
+  stellaChoose: {fileID: 21300000, guid: 522d6ddb5c581f6468fca35d60cc2b76, type: 3}
+  dadChoose: {fileID: 21300000, guid: 707a80e22b03a334fa5977d179c24834, type: 3}
 --- !u!114 &1137666445
 MonoBehaviour:
   m_ObjectHideFlags: 0
