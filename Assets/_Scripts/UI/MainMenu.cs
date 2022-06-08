@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     public Image sourceDad;
     public Sprite stellaChoose;
     public Sprite dadChoose;
+    public Sprite dialogDad;
+    public Sprite dialogStella;
     public void ExitApp()
     {
         Application.Quit();
@@ -33,7 +35,7 @@ public class MainMenu : MonoBehaviour
         dad.SetActive(false);
         sourceDad.sprite = dadSprite;
         sourceStella.sprite = stellaChoose;
-        current = stellaSprite;
+        current = dialogStella;
     }
 
     public void ChooseDad()
@@ -43,7 +45,7 @@ public class MainMenu : MonoBehaviour
         dad.SetActive(true);
         sourceDad.sprite = dadChoose;
         sourceStella.sprite = stellaSprite;
-        current = dadSprite;
+        current = dialogDad;
     }
 
     public void StartGame(int sceneIndex)
