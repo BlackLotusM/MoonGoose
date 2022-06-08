@@ -11,6 +11,8 @@ public class OpenQuestion : MonoBehaviour
     public bool active;
     public GameObject theBtn;
 
+    public AudioSource source;
+
     private void Start()
     {
         anim.SetFloat("Blend", 0);
@@ -38,6 +40,7 @@ public class OpenQuestion : MonoBehaviour
         Debug.Log("run?");
         if (!active)
             return;
+        source.PlayOneShot(source.clip);
         gameObject.SetActive(true);
         state = !state;
         done = false;
@@ -54,6 +57,7 @@ public class OpenQuestion : MonoBehaviour
     public void CloseBtn(bool state)
     {
         done = false;
+        this.state = state;
         if (current != null)
             StopCoroutine(current);
         current = changeVal(state);
