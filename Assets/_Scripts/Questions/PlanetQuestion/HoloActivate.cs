@@ -51,7 +51,11 @@ public class HoloActivate : MonoBehaviour
     {
         isActive = true;
     }
-
+    public void Dsab()
+    {
+        isActive = false;
+        source.gameObject.SetActive(false);
+    }
     private void Start()
     {
         manager = FindObjectOfType<DialogManager>();

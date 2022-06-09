@@ -21,7 +21,11 @@ public class MusicManager : MonoBehaviour
     {
         i++;
     }
-
+    public void Stop()
+    {
+        active = false;
+        source.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -41,6 +45,11 @@ public class MusicManager : MonoBehaviour
                     source.clip = tail;
                     source.Play();
                     return;
+                case 4:
+                    source.clip = tail;
+                    source.Play();
+                    return;
+
             }
         }
     }
