@@ -50,9 +50,11 @@ public class TabletNotification : MonoBehaviour
     }
 
     bool hasRun = false;
+    int it = 0;
     public void StartOnce()
     {
-        if (!hasRun)
+        it++;
+        if (!hasRun && it > 1)
         {
             hasRun = true;
             FindObjectOfType<TabletHandler>().PickedUpDialog();
