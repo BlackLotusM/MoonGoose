@@ -43,6 +43,7 @@ public class Vraag3 : MonoBehaviour
 
     public Button[] btn;
     public Button[] sendBtn;
+    public Button butBtn;
 
     public AudioSource send;
     public AudioSource select;
@@ -179,7 +180,7 @@ public class Vraag3 : MonoBehaviour
 
                 intPicState.Insert(typeIndex, temp);
             }
-            //Wind energie
+            //water energie
             else if (typeIndex == 1)
             {
                 //Add listener to btn
@@ -215,7 +216,7 @@ public class Vraag3 : MonoBehaviour
 
                 intPicState.Insert(typeIndex, temp);
             }
-            //Water energie
+            //wind energie
             else if (typeIndex == 2)
             {
                 //Add listener to btn
@@ -260,6 +261,8 @@ public class Vraag3 : MonoBehaviour
     {
         if (!active)
             return;
+        butBtn.onClick.RemoveAllListeners();
+        butBtn.onClick.AddListener(delegate { CheckAnswer(index); });
         select.PlayOneShot(select.clip);
         uitlegTarget.sprite = intPicState[index].uitleg;
         targetImage.gameObject.SetActive(true);
