@@ -57701,7 +57701,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4972456295488717093, guid: 54e5524f59376004db36543c2a5d7607, type: 2}
   m_audioClip: {fileID: 8300000, guid: 54956087dfea86041828d36a35e0f4a7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.621
+  m_Volume: 0.483
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -74583,7 +74583,7 @@ MonoBehaviour:
   gewicht: 0
   minJ: 0
   maxJ: 0
-  sentenceSpeed: 0.04
+  sentenceSpeed: 0.029
   soundPop: 3
   panel: {fileID: 1921993520}
   corIsRunning: 0
