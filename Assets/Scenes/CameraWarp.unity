@@ -7250,8 +7250,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: De PETflast
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 87a29e28ad385144fb7390fa4aa0e91c, type: 2}
-  m_sharedMaterial: {fileID: 3735780273011537940, guid: 87a29e28ad385144fb7390fa4aa0e91c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7285,7 +7285,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -9512,8 +9512,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'AFZENDER: GAIA ARMSTRONG'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9547,7 +9547,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -28439,8 +28439,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: VAN DE STERRENZEE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28474,7 +28474,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -39836,8 +39836,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: VAN DE STERRENZEE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -39871,7 +39871,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -41019,8 +41019,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ENERGIE OPWEKKERS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -41054,7 +41054,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -47945,7 +47945,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Brotha Nash
+  m_text: N6000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5835f6059c3df3e46bcbd5e4cb08181e, type: 2}
   m_sharedMaterial: {fileID: 7974017748809983340, guid: 5835f6059c3df3e46bcbd5e4cb08181e, type: 2}
@@ -49361,8 +49361,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: De PETflast
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 87a29e28ad385144fb7390fa4aa0e91c, type: 2}
-  m_sharedMaterial: {fileID: 3735780273011537940, guid: 87a29e28ad385144fb7390fa4aa0e91c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -49396,7 +49396,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -58963,8 +58963,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: De PETflast
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 87a29e28ad385144fb7390fa4aa0e91c, type: 2}
-  m_sharedMaterial: {fileID: 3735780273011537940, guid: 87a29e28ad385144fb7390fa4aa0e91c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -58998,7 +58998,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -72228,8 +72228,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: VAN DE STERRENZEE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
+  m_sharedMaterial: {fileID: 2008557863060408345, guid: 1b9a1f1b8ccd38946b15c9261901296a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -72263,7 +72263,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -76769,7 +76769,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: n6000
+  m_text: 'N6000
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5835f6059c3df3e46bcbd5e4cb08181e, type: 2}
   m_sharedMaterial: {fileID: 7974017748809983340, guid: 5835f6059c3df3e46bcbd5e4cb08181e, type: 2}
